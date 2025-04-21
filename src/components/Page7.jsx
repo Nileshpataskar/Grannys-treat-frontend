@@ -11,7 +11,6 @@ const Page7 = () => {
           </h3>
         </div>
 
-        <div className="border-4 border-pink-300 w-7xl h-[500px]">ds </div>
       </div>
       <img
         src="/assets/BG/page8_top.png"
