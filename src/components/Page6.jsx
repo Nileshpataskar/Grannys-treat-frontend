@@ -17,11 +17,11 @@ const Page6 = () => {
         <VideoSlider />
       </div>
 
-      <img
+      {/* <img
         src="/assets/BG/strawberry_page6.svg"
         alt="straw"
         className="absolute w-[150px] z-0 h-[150px] top-[10%] left-[70%] -rotate-[26deg] opacity-80 md:w-[205px] md:h-[208px] md:top-[18  0px] md:left-[900px]"
-      />
+      /> */}
       <img
         src="/assets/BG/leaf.svg"
         alt="straw"

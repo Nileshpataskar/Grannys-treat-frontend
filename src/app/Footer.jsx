@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
     <div className="bg-[#d2eef9] p-8 pt-28" >
-      <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col items-center md:items-center">
+      <div className="w-full mx-auto flex flex-col md:flex-row justify-between md:items-center">
+        <div className="flex flex-col items-start md:items-center">
           <h3 className="text-3xl font-[Fredoka] font-bold text-[#285192] mb-4">
             Connect with us
           </h3>
@@ -11,40 +11,55 @@ const Footer = () => {
               <img
                 src="/assets/BG/insta.svg"
                 alt="Instagram"
-                className="h-20 w-20"
+                className="h-14 w-14 sm:h-20 sm:w-20 "
               />
             </a>
             <a href="#">
               <img
                 src="/assets/BG/whatsapp.svg"
                 alt="Instagram"
-                className="h-20 w-20"
+                className="h-14 w-14 sm:h-20 sm:w-20"
               />
             </a>
             <a href="#">
               <img
                 src="/assets/BG/facebook.svg"
                 alt="Instagram"
-                className="h-20 w-20"
+                className="h-14 w-14 sm:h-20 sm:w-20"
               />
             </a>
           </div>
         </div>
 
-        <div className="text-start  md:text-start w-1/4 ">
-          <p className="text-lg text-[#285192] font-[Fredoka] mb-2">
+        <div className="w-full md:w-1/3 sm:text-center md:text-start space-y-4">
+          <p className="text-base font-medium sm:text-lg font-[Fredoka] text-[#285192]">
             Plot No: 403, Phase - 2, Industrial Area, Scheme No:78, Part - 1, MR
             11, Dewas Naka, Niranjanpur, Indore, Madhya Pradesh 452010
           </p>
-          <p className="text-lg font-[Fredoka] text-[#285192] mb-2 flex gap-4 items-center">
-            <img src="/assets/BG/phone.svg" className="w-6 h-6" /> +91
-            7024221305
+
+          <p className="flex sm:justify-center md:justify-start items-center gap-2">
+            <img
+              src="/assets/BG/phone.svg"
+              alt="Phone"
+              className="w-5 h-5 sm:w-6 sm:h-6"
+            />
+            <span className=" text-[#285192] rounded-full px-3 py-1 text-sm sm:text-base font-medium">
+              +91 7024221305
+            </span>
           </p>
 
-          <p className="text-lg font-[Fredoka] text-[#285192] mb-2 flex gap-4 items-center">
-            <img src="/assets/BG/gmail.svg" className="w-6 h-6" /> info@grannystreat.in
+          <p className="flex sm:justify-center md:justify-start items-center gap-2">
+            <img
+              src="/assets/BG/gmail.svg"
+              alt="Email"
+              className="w-5 h-5 sm:w-6 sm:h-6"
+            />
+            <span className=" text-[#285192] rounded-full px-3 py-1 text-sm sm:text-base font-medium">
+              info@grannystreat.in
+            </span>
           </p>
         </div>
+
       </div>
 
       <div className="text-center mt-12 font-[Fredoka] font-semibold  text-[#285192]">
@@ -52,7 +67,7 @@ const Footer = () => {
           Copyright © 2025 Granny&apos;s Treat
         </p>
       </div>
-    </div>
+    </div >
   );
 };
 

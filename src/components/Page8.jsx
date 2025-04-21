@@ -3,17 +3,17 @@ import  { useState, useEffect } from "react";
 const Page8 = () => {
   const [thumbnails, setThumbnails] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        `https://graph.instagram.com/9189784584476382/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=IGAAd2GoR0Qz5BZAE5tVU9fSzZAqSk5Qd3d0N1liLU8ybDZAtTzB6TVlpUHh3ek5vVlNNWktLLXdUV2kxMFdzZAlAxR3hKZAWQyejlBOVd5N1c5dlZA5Rm1WWmV6c0NoY1M3eUFUQjdfT0hKQ0xHM05GRm5UMzB6QzNuZA2d5eW9FOGNOcwZDZD`
-      );
-      const data = await response.json();
-      setThumbnails(data.data.slice(0, 6)); // Get 6 images
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch(
+  //       `https://graph.instagram.com/9189784584476382/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=IGAAd2GoR0Qz5BZAE5tVU9fSzZAqSk5Qd3d0N1liLU8ybDZAtTzB6TVlpUHh3ek5vVlNNWktLLXdUV2kxMFdzZAlAxR3hKZAWQyejlBOVd5N1c5dlZA5Rm1WWmV6c0NoY1M3eUFUQjdfT0hKQ0xHM05GRm5UMzB6QzNuZA2d5eW9FOGNOcwZDZD`
+  //     );
+  //     const data = await response.json();
+  //     setThumbnails(data?.data?.slice(0, 6)); // Get 6 images
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="min-h-screen w-full bg-[#d2eef9] relative">

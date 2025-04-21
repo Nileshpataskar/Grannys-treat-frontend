@@ -1,6 +1,8 @@
+import FullWidthMap from "../helperComponents/FullWidthMap";
+
 const Page7 = () => {
   return (
-    <div className="h-[100vh] w-full  bg-[#55acee] relative z-10">
+    <div className="h-fit w-full  bg-[#55acee] relative z-10 py-20">
       <div className="w-full flex gap-10 justify-center items-center flex-col  ">
         <div className="mt-28 flex flex-col gap-4">
           <h1 className="font-[Fredoka] z-20 text-[#285192]  font-extrabold text-center text-3xl md:text-5xl  tracking-wider">
@@ -10,7 +12,10 @@ const Page7 = () => {
             Find a store with our products near your home
           </h3>
         </div>
+        <div className="md:w-7xl p-10 ">
 
+          <FullWidthMap />
+        </div>
       </div>
       <img
         src="/assets/BG/page8_top.png"
