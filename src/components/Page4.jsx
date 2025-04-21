@@ -3,7 +3,7 @@ const Page4 = () => {
     <div className="h-auto w-full bg-[#d2eef9] py-16 px-6 md:px-20 relative">
       <div className="w-full flex flex-col items-center">
         {/* Heading */}
-        <h3 className="font-[Fredoka] text-[#285192] font-extrabold text-center text-3xl md:text-5xl mt-10 tracking-wider">
+        <h3 className="font-[Fredoka] text-[#285192] font-extrabold text-center text-3xl md:text-6xl mt-10 tracking-wider">
           Our Journey to Healthier Dairy
         </h3>
 

@@ -4,25 +4,26 @@ const Header = () => {
   const navbarData = ["Products", "Ourstory", "Benefits", "Testimonials"];
 
   return (
-    <header className="fixed w-screen z-50 bg-transparent px-10 ">
-      <div className="max-w-full mx-auto flex items-center justify-between">
+    <header className="fixed w-screen z-50 bg-transparent px-4 sm:px-6 md:px-10">
+      <div className="max-w-full mx-auto w-full flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
             src="/assets/logo.png"
             alt="logo"
-            className="w-16 md:w-[118px] h-auto"
+            className="w-[clamp(3rem,8vw,7.5rem)] h-auto"
           />
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex flex-1 justify-center">
-          <div className="bg-[#285192] flex space-x-6 px-6 py-2 rounded-full">
+          <div
+            className="flex gap-[clamp(1rem,2vw,2rem)] px-20 py-2 bg-[#285192] rounded-full">
             {navbarData.map((item, index) => (
               <a
                 key={index}
                 href="#"
-                className="text-white text-base md:text-2xl px-3"
+                className="text-white text-[clamp(0.9rem,1.5vw,1.4rem)] px-3"
               >
                 {item}
               </a>
@@ -34,7 +35,7 @@ const Header = () => {
         <div className="flex items-center">
           {/* Desktop "Contact Us" text */}
           <div className="hidden md:block">
-            <h1 className="font-[Fredoka] text-[#285192] text-xl md:text-3xl">
+            <h1 className="font-[Fredoka] text-[#285192] text-[clamp(1rem,2vw,1.8rem)]">
               Contact Us
             </h1>
           </div>
