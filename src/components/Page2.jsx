@@ -1,6 +1,6 @@
 const Page2 = () => {
   return (
-    <div className="min-h-screen w-full bg-[#d2eef9] relative overflow-hidden py-32">
+    <div className="h-fit md:min-h-screen  w-full bg-[#d2eef9] relative overflow-hidden py-10 md:py-32">
       <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[70%] h-full flex flex-col items-center justify-center mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Main text content */}

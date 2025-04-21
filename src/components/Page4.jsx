@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react";
+
 const Page4 = () => {
+  const images = [
+    "/assets/page4/photo.png",
+    "/assets/page4/img1.png",
+    "/assets/page4/img2.png",
+    "/assets/page4/img3.png",
+    "/assets/page4/img4.png",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 1000); // change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="w-full bg-[#d2eef9] py-16 px-4 sm:px-6 md:px-20 relative">
       <div className="w-full flex flex-col items-center">
@@ -12,14 +31,25 @@ const Page4 = () => {
         {/* Content Container */}
         <div className="w-full flex flex-col md:flex-row gap-10 md:gap-20 mt-10 items-center">
           {/* Left Image */}
-          <div className="w-full md:w-1/2 pt-10 md:pt-20 flex justify-center">
+          <div className="w-full sm:px-10 md:w-1/2 pt-10 md:pt-20 flex flex-col justify-center">
             <img
-              src="/assets/photo.png"
-              alt="Dairy Journey"
-              className="w-full md:max-w-[500px] md:h-[580px] h-auto"
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+              className=" md:h-[580px] h-auto object-cover transition-opacity duration-700 rounded-2xl"
             />
+            <div className="flex space-x-2 mt-4 w-full justify-center ">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-3 h-3 rounded-full transition-colors duration-300 focus:outline-none ${idx === currentIndex ? "bg-[#285192]" : "bg-[#cbdef3]"
+                    }`}
+                  onClick={() => setCurrentIndex(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
-         
+
           <div className="w-full md:w-1/2 flex flex-col items-start gap-6">
             <img
               src="/assets/photo2.png"
