@@ -1,8 +1,65 @@
+// Page3.jsx
+"use client";
+
+import { useState } from "react";
+import Carousel from "../helperComponents/Carousel";
+import { productCategories } from "../lib/carouselData";
+
 const Page3 = () => {
+  // ← track which category is showing:
+  const [categoryIndex, setCategoryIndex] = useState(0); // ← NEW
+  const category = productCategories[categoryIndex]; // ← UPDATED
+
+  // ← thumbnails now come from `category.items`:
+  const thumbnails = category.items.map((item) => item.image); // ← UPDATED
+
+  // ← handlers for category arrows:
+  const prevCategory = () =>
+    setCategoryIndex((i) => (i === 0 ? productCategories.length - 1 : i - 1)); // ← NEW
+  const nextCategory = () =>
+    setCategoryIndex((i) => (i === productCategories.length - 1 ? 0 : i + 1)); // ← NEW
+
   return (
-    <div className="h-screen w-full bg-[#88c0f8] relative flex flex-col items-center justify-center p-4 md:p-8">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl">Page 3 Title</h1>
-      <p className="text-base md:text-lg">Page 3 content goes here.</p>
+    <div className="w-full h-screen flex flex-col bg-gray-100 relative">
+      {/* ← move arrows here so they control categories */}
+      <button
+        onClick={prevCategory}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10 z-20 rounded-full"
+      >
+        &larr;
+      </button>
+      <button
+        onClick={nextCategory}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10 z-20 rounded-full"
+      >
+        &rarr;
+      </button>
+
+      <Carousel className="w-full h-full" thumbnails={thumbnails}>
+        {category.items.map((item, idx) => (
+          <div
+            key={idx}
+            className="w-full h-full flex flex-col items-center justify-center text-white text-lg sm:text-xl md:text-2xl font-bold px-5"
+            style={{ backgroundColor: category.items[idx].colorbg }}
+          >
+            {/* category title */}
+            <h1 className="text-2xl sm:text-3xl lg:text-6xl mb-4 font-[Fredoka]">
+              {item.title}
+            </h1>
+
+            {/* Image & variant title */}
+            <div className="my-6 text-center">
+              <img
+                src={item.image}
+                alt={item.title}
+                width={500}
+                height={400}
+                className=""
+              />
+            </div>
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };
