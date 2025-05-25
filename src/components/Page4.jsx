@@ -14,7 +14,7 @@ const Page4 = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 1000); // change slide every 5 seconds
+    }, 3500); // change slide every 5 seconds
     return () => clearInterval(interval);
   }, [images.length]);
 

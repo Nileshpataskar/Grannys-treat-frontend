@@ -6,21 +6,21 @@ const Page5 = () => {
       <img
         src="/assets/BG/page5_top.png"
         alt="img"
-        className="absolute top-0 w-full h-32 md:h-40 object-cover"
+        className="absolute top-0 w-full h-32 md:h-40 "
       />
 
       {/* Text Image */}
       <img
         src="/assets/BG/page5_text.svg"
         alt="img"
-        className="w-[90%] max-w-[400px] md:max-w-[600px] mt-40"
+        className="w-[90%] max-w-[400px] md:max-w-[800px] mt-60"
       />
 
       {/* Design Image */}
       <img
         src="/assets/BG/page5_design.svg"
         alt="img"
-        className="w-[95%] max-w-[500px] md:max-w-[800px] h-auto mt-6"
+        className="w-[95%] max-w-[500px] md:max-w-[1000px] h-auto mt-6"
       />
     </div>
   );

@@ -20,7 +20,7 @@ const Page3 = () => {
     setCategoryIndex((i) => (i === productCategories.length - 1 ? 0 : i + 1)); // ← NEW
 
   return (
-    <div className="w-full h-screen flex flex-col bg-gray-100 relative">
+    <div className="w-full h-screen flex flex-col bg-gray-100 relative z-10">
       {/* ← move arrows here so they control categories */}
       <button
         onClick={prevCategory}
@@ -42,13 +42,12 @@ const Page3 = () => {
             className="w-full h-full flex flex-col items-center justify-center text-white text-lg sm:text-xl md:text-2xl font-bold px-5"
             style={{ backgroundColor: category.items[idx].colorbg }}
           >
-            {/* category title */}
             <h1 className="text-2xl sm:text-3xl lg:text-6xl mb-4 font-[Fredoka]">
               {item.title}
             </h1>
 
             {/* Image & variant title */}
-            <div className="my-6 text-center">
+            <div className="text-center">
               <img
                 src={item.image}
                 alt={item.title}
@@ -57,6 +56,10 @@ const Page3 = () => {
                 className=""
               />
             </div>
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl mb-4 font-[Fredoka] font-normal text-black">
+              (01/02)
+            </h1>
+            {/* category title */}
           </div>
         ))}
       </Carousel>
