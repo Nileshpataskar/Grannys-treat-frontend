@@ -5,7 +5,9 @@ const Page8 = () => {
 
   const fetchData = async () => {
     try {
-      const accessToken = import.meta.env.VITE_INSTA_ACCESS_TOKEN;
+      // const accessToken = import.meta.env.VITE_INSTA_ACCESS_TOKEN;
+       const accessToken = 'IGAAd2GoR0Qz5BZAFBiSHJmWkU5V0RDajQyanpKUERBb1VtUXZAJczR2UG80YXdIU1AtUFRLSWVRNUJPLUxKcXEtcDZART1hrck02TnJBaEt4N1RGeV9NX0U1Nmk5MkU3cmhRT0E1V2tvZAS15ajJlTGFaWVBrYUtTUzMtZAk9taEw1NAZDZD';
+
       console.log("access : ", accessToken);
       if (!accessToken) {
         console.error("Instagram access token is not defined");
