@@ -10,7 +10,7 @@ import Page9 from "./components/Page9";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="overflow-x-hidden w-full">
       <Page1 />
       <Page2 />
       <Page3 />
