@@ -1,31 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface CarouselProps {
   children: React.ReactNode; // Accept valid React children
   className?: string; // Optional custom class for the wrapper
   thumbnails?: string[]; // Optional array of image sources for bottom navigation
+  onSlideChange?: (index: number) => void;
+  initialSlide?: number;
 }
 
-const Carousel = ({ children, className, thumbnails }: CarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const Carousel = ({ children, className, thumbnails, onSlideChange, initialSlide = 0 }: CarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(initialSlide);
   const totalSlides = React.Children.count(children);
 
+  // Update currentIndex when initialSlide changes
+  useEffect(() => {
+    setCurrentIndex(initialSlide);
+  }, [initialSlide]);
+
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
-    );
+    const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    onSlideChange?.(newIndex);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
-    );
+    const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    onSlideChange?.(newIndex);
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    onSlideChange?.(index);
   };
 
   return (

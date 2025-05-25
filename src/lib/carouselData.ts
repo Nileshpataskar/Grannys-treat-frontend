@@ -99,7 +99,7 @@ export const productCategories = [
     items: [
       {
         title: "Malai Paneer 100g",
-        image: "/assets/ProductImages/Paneer100g.png",
+        image: "/assets/ProductImages/Paneer 100g.png",
         subtext1: "Small cube pack",
         subtext2: "Fresh Indian cheese",
         colorbg: "#9ed1a6",
