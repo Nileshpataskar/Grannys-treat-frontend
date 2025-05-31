@@ -6,11 +6,12 @@ interface CarouselProps {
   children: React.ReactNode; // Accept valid React children
   className?: string; // Optional custom class for the wrapper
   thumbnails?: string[]; // Optional array of image sources for bottom navigation
+  thumbnailNavPosition?: React.CSSProperties; // Absolute position for thumbnail nav
   onSlideChange?: (index: number) => void;
   initialSlide?: number;
 }
 
-const Carousel = ({ children, className, thumbnails, onSlideChange, initialSlide = 0 }: CarouselProps) => {
+const Carousel = ({ children, className, thumbnails, thumbnailNavPosition, onSlideChange, initialSlide = 0 }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialSlide);
   const totalSlides = React.Children.count(children);
 
@@ -72,7 +73,10 @@ const Carousel = ({ children, className, thumbnails, onSlideChange, initialSlide
 
       {/* Thumbnail Navigation */}
       {thumbnails && (
-        <div className="absolute -bottom-10 sm:-bottom-36 left-0 right-0 flex justify-center  space-x-1 z-10">
+        <div
+          className="absolute left-0 right-0 flex justify-center space-x-1 z-10"
+          style={thumbnailNavPosition}
+        >
           <div className="flex space-x-2  px-6 sm:px-0">
             {thumbnails.map((src, index) => (
               <button

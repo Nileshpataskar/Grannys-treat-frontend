@@ -22,7 +22,8 @@ const Page4 = () => {
     <div className="w-full bg-[#d2eef9] py-16 px-4 sm:px-6 md:px-20 relative">
       <div className="w-full flex flex-col items-center">
         {/* Heading */}
-        <h3 className="font-[Fredoka] text-[#285192] font-extrabold text-center tracking-wider
+        <h3
+          className="font-[Fredoka] text-[#285192] font-extrabold text-center tracking-wider
           text-[clamp(1.75rem,5vw,3.5rem)] mt-10"
         >
           Our Journey to Healthier Dairy
@@ -41,8 +42,9 @@ const Page4 = () => {
               {images.map((_, idx) => (
                 <button
                   key={idx}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 focus:outline-none ${idx === currentIndex ? "bg-[#285192]" : "bg-[#cbdef3]"
-                    }`}
+                  className={`w-3 h-3 rounded-full transition-colors duration-300 focus:outline-none ${
+                    idx === currentIndex ? "bg-[#285192]" : "bg-[#cbdef3]"
+                  }`}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -57,20 +59,18 @@ const Page4 = () => {
               className="w-full max-w-[400px] md:max-w-[500px] md:h-[300px] h-auto"
             />
 
-            <p
-              className="font-[Fredoka] text-[#285192] font-medium leading-relaxed 
-                text-[clamp(1rem,2.5vw,1.25rem)]"
-            >
-              At Granny&apos;s Treat, our story began with a simple truth — traditional dahi isn’t just delicious,
-              it’s naturally rich in probiotics that support gut health and immunity.
+            <p className="font-[Fredoka] text-[#285192] font-normal text-[clamp(1.5rem,2.5vw,1.8rem)]">
+              At Granny&apos;s Treat, our story began with a simple truth —
+              traditional dahi isn’t just delicious, it’s naturally rich in
+              probiotics that support gut health and immunity.
               <br />
+              Inspired by this, we set out to create dairy that’s fresh, pure,
+              and free from antibiotics — because real nourishment should never
+              come with compromises.
               <br />
-              Inspired by this, we set out to create dairy that’s fresh, pure, and free from antibiotics —
-              because real nourishment should never come with compromises.
-              <br />
-              <br />
-              We keep things simple: high-quality milk, no shortcuts, and probiotic-rich products that support
-              your health, your lifestyle, and your taste buds.
+              We keep things simple: high-quality milk, no shortcuts, and
+              probiotic-rich products that support your health, your lifestyle,
+              and your taste buds.
             </p>
           </div>
         </div>

@@ -1,6 +1,7 @@
 export const productCategories = [
   {
     category: "Lassi",
+    thumbnailNavPosition: { bottom: -120 },
     items: [
       {
         title: "Probiotic lassi",
@@ -8,6 +9,7 @@ export const productCategories = [
         subtext1: "Plain & silky",
         subtext2: "Classic probiotic drink",
         colorbg: "#88c0f8",
+        imgStyle: { width: 400, height: 340, top: 0, marginBottom: 0 },
       },
       {
         title: "Lassi Strawberry 200g",
@@ -15,6 +17,7 @@ export const productCategories = [
         subtext1: "Strawberry crush",
         subtext2: "Creamy & fruity",
         colorbg: "#e44556",
+        imgStyle: { width: 260, height: 340, top: 0, marginBottom: 0 },
       },
       {
         title: "Lassi Blueberry 200g",
@@ -22,6 +25,7 @@ export const productCategories = [
         subtext1: "Fresh blueberry punch",
         subtext2: "Sweet & tangy",
         colorbg: "#b691c5",
+        imgStyle: { width: 260, height: 340, top: 0, marginBottom: 0 },
       },
       {
         title: "Lassi Mango 200g",
@@ -29,11 +33,13 @@ export const productCategories = [
         subtext1: "Real mango puree",
         subtext2: "Tropical delight",
         colorbg: "#f28e47",
+        imgStyle: { width: 260, height: 340, top: 0, marginBottom: 0 },
       },
     ],
   },
   {
     category: "Buttermilk",
+    thumbnailNavPosition: { bottom: -120 },
     items: [
       {
         title: "Buttermilk Plain 400ml",
@@ -41,6 +47,7 @@ export const productCategories = [
         subtext1: "Classic creamy taste",
         subtext2: "Rich in probiotics",
         colorbg: "#f3cb8e",
+        imgStyle: { width: 320, height: 260, top: 20, marginBottom: 0 },
       },
       {
         title: "Buttermilk Sambaram 200ml",
@@ -48,6 +55,7 @@ export const productCategories = [
         subtext1: "Tamarind & spice twist",
         subtext2: "Cool and tangy",
         colorbg: "#93cda2",
+        imgStyle: { width: 320, height: 260, top: 20, marginBottom: 0 },
       },
       {
         title: "Buttermilk Jeera 200ml",
@@ -55,12 +63,14 @@ export const productCategories = [
         subtext1: "Spiced with cumin",
         subtext2: "Gut-friendly refreshment",
         colorbg: "#5dc726",
+        imgStyle: { width: 320, height: 260, top: 20, marginBottom: 0 },
       },
     ],
   },
 
   {
     category: "Dahi",
+    thumbnailNavPosition: { bottom: -140 },
     items: [
       {
         title: "Dahi 100g",
@@ -68,6 +78,7 @@ export const productCategories = [
         subtext1: "Small pack",
         subtext2: "Fresh and creamy",
         colorbg: "#61b4e1",
+        imgStyle: { width: 340, height: 220, top: 40, marginBottom: 0 },
       },
 
       {
@@ -76,6 +87,7 @@ export const productCategories = [
         subtext1: "Family pack",
         subtext2: "Smooth texture",
         colorbg: "#61b4e1",
+        imgStyle: { width: 340, height: 220, top: 40, marginBottom: 0 },
       },
       {
         title: "Dahi 350g",
@@ -83,6 +95,7 @@ export const productCategories = [
         subtext1: "Party size",
         subtext2: "Thick & creamy",
         colorbg: "#61b4e1",
+        imgStyle: { width: 340, height: 220, top: 40, marginBottom: 0 },
       },
       {
         title: "Dahi 180g",
@@ -90,12 +103,14 @@ export const productCategories = [
         subtext1: "Mid-size snack",
         subtext2: "Rich in protein",
         colorbg: "#61b4e1",
+        imgStyle: { width: 340, height: 220, top: 40, marginBottom: 0 },
       },
     ],
   },
 
   {
     category: "Paneer",
+    thumbnailNavPosition: { bottom: -250 },
     items: [
       {
         title: "Malai Paneer 100g",
@@ -103,6 +118,7 @@ export const productCategories = [
         subtext1: "Small cube pack",
         subtext2: "Fresh Indian cheese",
         colorbg: "#9ed1a6",
+        imgStyle: { width: 220, height: 220, top: 40, marginBottom: 0 },
       },
       {
         title: "Malai Paneer 200g",
@@ -110,11 +126,13 @@ export const productCategories = [
         subtext1: "Larger serving",
         subtext2: "Soft & creamy",
         colorbg: "#14871f",
+        imgStyle: { width: 260, height: 260, top: 40, marginBottom: 0 },
       },
     ],
   },
   {
     category: "Yogurt",
+    thumbnailNavPosition: { bottom: -80 },
     items: [
       {
         title: "Probiotic Strawberry Yogurt",
@@ -122,6 +140,7 @@ export const productCategories = [
         subtext1: "Strawberry yogurt cup",
         subtext2: "Fresh fruit bits",
         colorbg: "#fc758c",
+        imgStyle: { width: 420, height: 420, top: 40, marginBottom: 0 },
       },
       {
         title: "Probiotic Mango Yogurt",
@@ -129,12 +148,14 @@ export const productCategories = [
         subtext1: "Mango yogurt cup",
         subtext2: "Sweet & tangy",
         colorbg: "#fdc858",
+        imgStyle: { width: 420, height: 220, top: 40, marginBottom: 0 },
       },
     ],
   },
 
   {
     category: "Shrikhand",
+    thumbnailNavPosition: { bottom: 40 },
     items: [
       {
         title: "Elaichi Shrikhand",
@@ -142,6 +163,7 @@ export const productCategories = [
         subtext1: "Cardamom flavor",
         subtext2: "Delicate & creamy",
         colorbg: "#8bc960",
+        imgStyle: { width: 220, height: 220, top: 40, marginBottom: 0 },
       },
       {
         title: "Badam & Pista Shrikhand",
@@ -149,6 +171,7 @@ export const productCategories = [
         subtext1: "Almond & pistachio",
         subtext2: "Aromatic saffron base",
         colorbg: "#e9b26d",
+        imgStyle: { width: 220, height: 220, top: 40, marginBottom: 0 },
       },
     ],
   },

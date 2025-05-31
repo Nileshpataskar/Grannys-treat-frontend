@@ -20,7 +20,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-1 justify-center mt-5">
-            <div className="flex gap-[clamp(1rem,2vw,2rem)] px-20 py-3 bg-[#285192] rounded-full">
+            <div className="flex gap-[clamp(4rem,2vw,5rem)] px-20 py-2 bg-[#285192] rounded-full">
               {navbarData.map((item, index) => (
                 <a
                   key={index}

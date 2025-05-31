@@ -1,3 +1,5 @@
+import OptimizedImage from './OptimizedImage';
+
 const Page1 = () => {
   return (
     <div className="relative h-[130vh] w-full bg-[url('/assets/bg1.png')] bg-cover bg-center bg-no-repeat bg-[#d2eef9]">
@@ -5,9 +7,11 @@ const Page1 = () => {
         <div className="max-w-full mx-auto w-full flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img
+            <OptimizedImage
               src="/assets/logo.png"
               alt="logo"
+              width={120}
+              height={120}
               className="w-[clamp(4rem,8vw,7.5rem)] h-auto"
             />
           </div>
@@ -21,7 +25,7 @@ const Page1 = () => {
           <div className="flex items-center">
             {/* Desktop "Contact Us" text */}
             <div className="hidden md:block">
-              <h1 className="font-[Fredoka] text-[#285192] text-[clamp(1rem,2vw,1.8rem)]">
+              <h1 className="font-[Fredoka] text-[#285192] font-semibold text-[clamp(1rem,2vw,1.8rem)]">
                 Contact Us
               </h1>
             </div>
@@ -39,9 +43,11 @@ const Page1 = () => {
         <h3 className="font-[Fredoka] text-[#285192] font-medium text-center  text-[clamp(1rem,2vw,2rem)] leading-snug max-w-[90%] sm:max-w-[80%] md:max-w-[70%] xl:max-w-[60%]">
           Quality That Brings Homemade Goodness to Your Table
         </h3>
-        <img
+        <OptimizedImage
           src="/assets/BG/button.svg"
           alt="bg1"
+          width={240}
+          height={80}
           className="w-[clamp(10rem,20vw,15rem)] h-auto mt-4"
         />
       </div>

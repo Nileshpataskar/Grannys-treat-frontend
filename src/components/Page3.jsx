@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Carousel from "../helperComponents/Carousel";
 import { productCategories } from "../lib/carouselData";
+import OptimizedImage from "./OptimizedImage";
 
 // Preload all images when the module is imported
 const preloadedImages = new Set();
@@ -20,6 +21,7 @@ const Page3 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const category = productCategories[categoryIndex];
   const thumbnails = category.items.map((item) => item.image);
+  const thumbnailNavPosition = category.thumbnailNavPosition || { bottom: 40 };
 
   const prevCategory = () => {
     setCategoryIndex((i) => (i === 0 ? productCategories.length - 1 : i - 1));
@@ -53,6 +55,7 @@ const Page3 = () => {
       <Carousel 
         className="w-full h-full" 
         thumbnails={thumbnails}
+        thumbnailNavPosition={thumbnailNavPosition}
         onSlideChange={handleImageChange}
         initialSlide={currentImageIndex}
       >
@@ -66,12 +69,20 @@ const Page3 = () => {
               {item.title}
             </h1>
 
-            <div className="text-center relative">
-              <img
+            <div className="text-center relative flex items-center justify-center" style={{ minHeight: 220 }}>
+              <OptimizedImage
                 src={item.image}
                 alt={item.title}
-                width={500}
-                height={400}
+                width={item.imgStyle?.width}
+                height={item.imgStyle?.height}
+                style={{
+                  marginTop: item.imgStyle?.top || 0,
+                  marginBottom: item.imgStyle?.marginBottom || 0,
+                  maxWidth: '100%',
+                  maxHeight: '60vh',
+                  objectFit: 'contain',
+                  display: 'inline-block',
+                }}
                 className="transition-all duration-500"
               />
             </div>

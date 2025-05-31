@@ -1,13 +1,12 @@
 const Page2 = () => {
   return (
     <div className="h-fit md:min-h-screen  w-full bg-[#d2eef9] relative overflow-hidden py-10 md:py-32">
-      <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[70%] h-full flex flex-col items-center justify-center mx-auto px-4 sm:px-6 md:px-8">
+      <div className="w-[95%] sm:w-[90%] md:w-[90%] h-full flex flex-col items-center justify-center mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Main text content */}
         <h1
           className="font-[Fredoka] text-[#285192] font-semibold text-center 
-          tracking-wide leading-relaxed
-          text-[clamp(1rem,2vw,2.25rem)] "
+          tracking-normal leading-relaxed text-4xl "
         >
           At Granny&apos;s Treat, we craft probiotic-rich dairy that’s as nourishing as it is delicious — your daily go-to for health, taste, and a dash of love in every bite. Welcome to a community that celebrates good food and even better living.
         </h1>
@@ -15,7 +14,7 @@ const Page2 = () => {
         {/* Bottom heading */}
         <h4
           className="font-[Fredoka] text-[#285192] font-extrabold text-center 
-          tracking-wide mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32
+          tracking-wide mt-16 sm:mt-20 md:mt-44
           text-3xl sm:text-5xl "
         >
           Explore our range of dairy delights
