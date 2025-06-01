@@ -42,7 +42,7 @@ const Page8 = () => {
               <img
                 src={thumbnails[0]?.thumbnail_url || thumbnails[0]?.media_url}
                 alt={thumbnails[0]?.caption}
-                className="w-full h-[516px] border-8 border-white object-cover rounded-lg shadow-lg"
+                className="w-full h-[516px] border-8 border-white object-cover rounded-3xl shadow-lg"
               />
             )}
           </div>
@@ -55,14 +55,14 @@ const Page8 = () => {
                 <img
                   src={thumbnails[1].thumbnail_url || thumbnails[1].media_url}
                   alt={thumbnails[1].caption}
-                  className="w-1/2 object-cover border-8 border-white rounded-lg shadow-lg"
+                  className="w-1/2 object-cover border-8 border-white rounded-3xl shadow-lg"
                 />
               )}
               {thumbnails[2] && (
                 <img
                   src={thumbnails[2].thumbnail_url || thumbnails[2].media_url}
                   alt={thumbnails[2].caption}
-                  className="w-2/3 object-cover border-8 border-white rounded-lg shadow-lg"
+                  className="w-2/3 object-cover border-8 border-white rounded-3xl shadow-lg"
                 />
               )}
             </div>
@@ -74,7 +74,7 @@ const Page8 = () => {
                   key={thumbnails[3].id}
                   src={thumbnails[3].thumbnail_url || thumbnails[3].media_url}
                   alt={thumbnails[3].caption}
-                  className="w-[60%] object-cover border-8 border-white rounded-lg shadow-lg"
+                  className="w-[60%] object-cover border-8 border-white rounded-3xl shadow-lg"
                 />
               )}
               {thumbnails[4] && (
@@ -82,7 +82,7 @@ const Page8 = () => {
                   key={thumbnails[4].id}
                   src={thumbnails[4].thumbnail_url || thumbnails[4].media_url}
                   alt={thumbnails[4].caption}
-                  className="w-[40%] object-cover border-8 border-white rounded-lg shadow-lg"
+                  className="w-[40%] object-cover border-8 border-white rounded-3xl shadow-lg"
                 />
               )}
             </div>

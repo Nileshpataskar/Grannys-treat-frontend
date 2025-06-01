@@ -66,9 +66,7 @@ const FullWidthMap = () => {
         h-[80vh]        /* ← ensure a visible height on mobile */
         sm:aspect-[4/3] /* keep ratio from sm up */
         md:aspect-[3/2]
-        lg:aspect-[16/9]
-        xl:aspect-[21/2]
-        border-8 border-white rounded-xl overflow-hidden z-50
+        border-10 border-white rounded-xl overflow-hidden z-50
       "
     >
       <GoogleMap

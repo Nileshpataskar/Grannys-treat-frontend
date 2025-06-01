@@ -5,6 +5,7 @@ import { useState } from "react";
 import Carousel from "../helperComponents/Carousel";
 import { productCategories } from "../lib/carouselData";
 import OptimizedImage from "./OptimizedImage";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Preload all images when the module is imported
 const preloadedImages = new Set();
@@ -21,7 +22,10 @@ const Page3 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const category = productCategories[categoryIndex];
   const thumbnails = category.items.map((item) => item.image);
-  const thumbnailNavPosition = category.thumbnailNavPosition || { bottom: 40 };
+  const currentItem = category.items[currentImageIndex];
+  const thumbnailNavPosition = currentItem.thumbnailNavPosition || category.thumbnailNavPosition || { bottom: 40 };
+  const selectedScales = category.items.map((item) => item.selectedScale || 1.7);
+  const thumbnailGap = category.thumbnailGap || 8;
 
   const prevCategory = () => {
     setCategoryIndex((i) => (i === 0 ? productCategories.length - 1 : i - 1));
@@ -41,15 +45,15 @@ const Page3 = () => {
     <div className="w-full h-screen flex flex-col bg-gray-100 relative z-10">
       <button
         onClick={prevCategory}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10 z-20 rounded-full transition-all duration-300"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/75 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10 z-20 rounded-full transition-all duration-300 flex items-center justify-center"
       >
-        &larr;
+        <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextCategory}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10 z-20 rounded-full transition-all duration-300"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/75 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10 z-20 rounded-full transition-all duration-300 flex items-center justify-center"
       >
-        &rarr;
+        <ChevronRight className="w-6 h-6" />
       </button>
 
       <Carousel 
@@ -58,6 +62,8 @@ const Page3 = () => {
         thumbnailNavPosition={thumbnailNavPosition}
         onSlideChange={handleImageChange}
         initialSlide={currentImageIndex}
+        selectedScales={selectedScales}
+        thumbnailGap={thumbnailGap}
       >
         {category.items.map((item, idx) => (
           <div
@@ -68,8 +74,10 @@ const Page3 = () => {
             <h1 className="text-2xl sm:text-3xl lg:text-6xl mb-4 font-[Fredoka] transition-all duration-500">
               {item.title}
             </h1>
-
-            <div className="text-center relative flex items-center justify-center" style={{ minHeight: 220 }}>
+            <div
+              className="text-center relative flex items-center justify-center"
+              style={{ minHeight: 220, marginBottom: 80 }}
+            >
               <OptimizedImage
                 src={item.image}
                 alt={item.title}

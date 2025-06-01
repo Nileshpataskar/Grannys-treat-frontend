@@ -1,17 +1,29 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CarouselProps {
-  children: React.ReactNode; // Accept valid React children
-  className?: string; // Optional custom class for the wrapper
-  thumbnails?: string[]; // Optional array of image sources for bottom navigation
-  thumbnailNavPosition?: React.CSSProperties; // Absolute position for thumbnail nav
+  children: React.ReactNode;
+  className?: string;
+  thumbnails?: string[];
+  thumbnailNavPosition?: React.CSSProperties;
   onSlideChange?: (index: number) => void;
   initialSlide?: number;
+  selectedScales?: number[];
+  thumbnailGap?: number;
 }
 
-const Carousel = ({ children, className, thumbnails, thumbnailNavPosition, onSlideChange, initialSlide = 0 }: CarouselProps) => {
+const Carousel = ({
+  children,
+  className,
+  thumbnails,
+  thumbnailNavPosition,
+  onSlideChange,
+  initialSlide = 0,
+  selectedScales,
+  thumbnailGap,
+}: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialSlide);
   const totalSlides = React.Children.count(children);
 
@@ -55,21 +67,21 @@ const Carousel = ({ children, className, thumbnails, thumbnailNavPosition, onSli
         ))}
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 -translate-y-1/2 z-10">
+      {/* Navigation Buttons - Carousel left/right navigation */}
+      {/* <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 -translate-y-1/2 z-10">
         <button
           onClick={goToPrevious}
-          className="bg-white/80 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10"
+          className="bg-white/70 hover:bg-white text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 z-20"
         >
-          &larr;
+          <ChevronLeft className="w-8 h-8" />
         </button>
         <button
           onClick={goToNext}
-          className="bg-white/80 backdrop-blur-sm hover:bg-white text-black w-8 h-8 sm:w-10 sm:h-10"
+          className="bg-white/70 hover:bg-white text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 z-20"
         >
-          &rarr;
+          <ChevronRight className="w-8 h-8" />
         </button>
-      </div>
+      </div> */}
 
       {/* Thumbnail Navigation */}
       {thumbnails && (
@@ -77,27 +89,36 @@ const Carousel = ({ children, className, thumbnails, thumbnailNavPosition, onSli
           className="absolute left-0 right-0 flex justify-center space-x-1 z-10"
           style={thumbnailNavPosition}
         >
-          <div className="flex space-x-2  px-6 sm:px-0">
-            {thumbnails.map((src, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`${
-                  index === currentIndex
-                    ? "border-transparent scale-[1.7]"
-                    : "border-transparent opacity-70"
-                } transition-transform`}
-              >
-                <img
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  width={205}
-                  height={105}
-                  //   objectFit="cover"
-                  className="rounded  "
-                />
-              </button>
-            ))}
+          <div
+            className="flex items-end px-6 sm:px-0"
+            style={{ gap: `${thumbnailGap ?? 8}px`, height: "110px" }}
+          >
+            {thumbnails.map((src, index) => {
+              const scale =
+                selectedScales && selectedScales[index]
+                  ? selectedScales[index]
+                  : 1.7;
+              return (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`border-transparent transition-transform`}
+                  style={
+                    index === currentIndex
+                      ? { transform: `scale(${scale})` }
+                      : {}
+                  }
+                >
+                  <img
+                    src={src}
+                    alt={`Slide ${index + 1}`}
+                    width={205}
+                    height={105}
+                    className="rounded h-full object-contain"
+                  />
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
