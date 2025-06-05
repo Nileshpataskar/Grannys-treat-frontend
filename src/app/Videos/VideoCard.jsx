@@ -1,9 +1,12 @@
 // src/components/VideoCard/VideoCard.jsx
-import { PauseCircle, PlayCircle, Volume1Icon, VolumeXIcon } from "lucide-react";
 import PropTypes from "prop-types";
 import { useState, useRef } from "react";
+import { BsFillPlayCircleFill } from "react-icons/bs";
+import { FaPauseCircle } from "react-icons/fa";
+import { FaVolumeXmark } from "react-icons/fa6";
+import { IoMdPlayCircle } from "react-icons/io";
+import { IoVolumeHigh } from "react-icons/io5";
 import ReactPlayer from "react-player";
-// Import icons from lucide-react
 
 const VideoCard = ({
   id,
@@ -88,14 +91,12 @@ const VideoCard = ({
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <button
               onClick={handlePlayPause}
-              className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform duration-200 focus:outline-none"
+              className=" flex bg-black rounded-full items-center justify-center hover:scale-110 transition-transform duration-200 focus:outline-none"
             >
               {isPlaying ? (
-                // Use Lucide Pause icon
-                <PauseCircle className="w-6 h-6 text-gray-800" />
+                <FaPauseCircle className="w-16 h-16 text-white " />
               ) : (
-                // Use Lucide Play icon
-                <PlayCircle className="w-6 h-6 text-gray-800" />
+                <BsFillPlayCircleFill  className="w-16 h-16 text-white/80 " />
               )}
             </button>
           </div>
@@ -108,11 +109,9 @@ const VideoCard = ({
             className="text-gray-800 bg-white rounded-full p-1.5 shadow-md hover:bg-gray-100 transition-colors focus:outline-none"
           >
             {isMuted ? (
-              // Use Lucide VolumeX (muted) icon
-              <VolumeXIcon className="w-5 h-5" />
+              <FaVolumeXmark  className="w-5 h-5" />
             ) : (
-              // Use Lucide Volume (unmuted) icon
-              <Volume1Icon className="w-5 h-5" />
+              <IoVolumeHigh  className="w-5 h-5" />
             )}
           </button>
         </div>
@@ -121,7 +120,7 @@ const VideoCard = ({
 
       {/* USERNAME SECTION */}
       <div className="p-3 text-center bg-white border-t border-gray-200">
-        <p className="text-lg font-[Fredoka] font-bold text-[#285192]">{username}</p>
+        <p className="text-2xl font-[Fredoka] font-bold text-[#285192]">{username}</p>
       </div>
     </div>
   );
