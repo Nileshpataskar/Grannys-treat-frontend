@@ -105,9 +105,9 @@ export const productCategories = [
       {
         title: "Lassi Mango 200g",
         image: "/assets/ProductImages/Lassi Mango 200g.png",
-        subtext1: "Real mango puree",
-        subtext2: "Tropical delight",
-        subtext3: "Perfect refreshment",
+        subtext1: "Our lassi brings together smooth cultured curd and delightful flavours to create a refreshing, creamy drink. Whether plain or fruity, each cup offers a gentle boost of probiotics and a satisfying sip rooted in traditional Indian goodness.",
+        subtext2: "Sweet Alphonso mango blended with probiotic lassi to give you a tropical, creamy drink that’s full of flavour and gut goodness.",
+        subtext3: "Tropical mango, creamy and nourishing.",
         colorbg: "#f28e47",
         imgStyle: { width: 450, height: 400, top: -100, marginBottom: 0 },
         thumbnailStyle: { width: 260, height: 105 },
