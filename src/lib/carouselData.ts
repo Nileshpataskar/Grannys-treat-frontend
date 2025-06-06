@@ -658,29 +658,49 @@ export const productCategories = [
         thumbnailNavPosition: { bottom: 20 },
         decorativeImages: {
           image1: {
-            path: "/assets/p3/directly-leaves.png",
-            width: 140,
-            height: 140,
+            path: "/assets/p3/pistachios.png",
+            width: 190,
+            height: 190,
             top: -90,
-            left: 150,
-            zIndex: 0
+            left: 170,
+            zIndex: 10
           },
           image2: {
-            path: "/assets/p3/cardamom.png",
+            path: "/assets/p3/almonds.png",
+
             width: 150,
             height: 150,
-            top: -10,
-            right: 180,
+            bottom: 70,
+            left: -80,
             zIndex: 10
           },
           image3: {
             path: "/assets/p3/leaf-2.png",
-            width: 140,
+            width: 100,
+            height: 80,
+            top: 200,
+            right: 240,
+            zIndex: 30,
+            rotate: 90
+          }, image4: {
+            path: "/assets/p3/leaf-2.png",
+            width: 100,
+            height: 150,
+            top: -110,
+            left: 0,
+            zIndex: 0,
+            rotate: 260
+          },
+          image5: {
+            path: "/assets/p3/leaf-2.png",
+            width: 100,
             height: 140,
-            bottom: 70,
-            left: -60,
-            zIndex: 50
-          }
+            top: -20,
+            right: 250,
+            zIndex: 0,
+            rotate: 5
+          },
+         
         }
       },
     ],
