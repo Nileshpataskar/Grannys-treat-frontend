@@ -41,23 +41,21 @@ const Page3 = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col bg-gray-100 relative z-10">
+    <div className="w-full h-[100vh] flex flex-col bg-gray-100 relative z-10">
       {/* Navigation Controls Overlay */}
       <div className="absolute inset-0 flex items-center justify-between px-8 pointer-events-none z-20">
         <button
           onClick={prevCategory}
-          className="pointer-events-auto flex items-center gap-2 text-black/70 hover:text-black transition-colors group"
+          className="pointer-events-auto cursor-pointer flex items-center gap-2 text-black/70 hover:text-black transition-colors group"
         >
           <div className="bg-white/75 backdrop-blur-sm hover:bg-white rounded-full p-2 transition-all duration-300">
             <ChevronLeft className="w-6 h-6" />
           </div>
-          <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Previous</span>
         </button>
         <button
           onClick={nextCategory}
-          className="pointer-events-auto flex items-center gap-2 text-black/70 hover:text-black transition-colors group"
+          className="pointer-events-auto cursor-pointer flex items-center gap-2 text-black/70 hover:text-black transition-colors group"
         >
-          <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Next</span>
           <div className="bg-white/75 backdrop-blur-sm hover:bg-white rounded-full p-2 transition-all duration-300">
             <ChevronRight className="w-6 h-6" />
           </div>
@@ -80,7 +78,7 @@ const Page3 = () => {
             style={{ backgroundColor: item.colorbg }}
           >
             {/* Div 1 - Product Title - 20vh */}
-            <div className="w-full h-[20vh] flex items-center justify-center">
+            <div className="w-full h-[40vh] flex items-center justify-center">
               <h1 className="text-2xl sm:text-3xl lg:text-6xl font-[Fredoka] transition-all duration-500">
                 {item.title}
               </h1>
@@ -169,51 +167,29 @@ const Page3 = () => {
                 </div>
 
                 {/* Decorative Images */}
-                {item.decorativeImages && (
-                  <>
-                    <img
-                      src={item.decorativeImages.image1.path}
-                      alt="Decorative 1"
-                      className="absolute object-contain"
-                      style={{
-                        width: item.decorativeImages.image1.width,
-                        height: item.decorativeImages.image1.height,
-                        top: item.decorativeImages.image1.top,
-                        left: item.decorativeImages.image1.left,
-                        zIndex: item.decorativeImages.image1.zIndex
-                      }}
-                    />
-                    <img
-                      src={item.decorativeImages.image2.path}
-                      alt="Decorative 2"
-                      className="absolute object-contain"
-                      style={{
-                        width: item.decorativeImages.image2.width,
-                        height: item.decorativeImages.image2.height,
-                        top: item.decorativeImages.image2.top,
-                        right: item.decorativeImages.image2.right,
-                        zIndex: item.decorativeImages.image2.zIndex
-                      }}
-                    />
-                    <img
-                      src={item.decorativeImages.image3.path}
-                      alt="Decorative 3"
-                      className="absolute object-contain"
-                      style={{
-                        width: item.decorativeImages.image3.width,
-                        height: item.decorativeImages.image3.height,
-                        bottom: item.decorativeImages.image3.bottom,
-                        left: item.decorativeImages.image3.left,
-                        zIndex: item.decorativeImages.image3.zIndex
-                      }}
-                    />
-                  </>
-                )}
+                {item.decorativeImages && Object.entries(item.decorativeImages).map(([key, image]) => (
+                  <img
+                    key={key}
+                    src={image.path}
+                    alt={`Decorative ${key}`}
+                    className="absolute object-contain"
+                    style={{
+                      width: image.width,
+                      height: image.height,
+                      top: image.top,
+                      left: image.left,
+                      right: image.right,
+                      bottom: image.bottom,
+                      zIndex: image.zIndex,
+                      transform: image.rotate ? `rotate(${image.rotate}deg)` : undefined
+                    }}
+                  />
+                ))}
               </div>
             </div>
 
             {/* Div 5 - Counter - 30vh */}
-            <div className="w-full h-[10vh]  flex flex-col items-center justify-center gap-4">
+            <div className="w-full h-[30vh]  flex flex-col items-center justify-center gap-4">
               <div className="text-2xl sm:text-3xl lg:text-4xl font-[Fredoka] font-normal text-black">
                 {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
               </div>
