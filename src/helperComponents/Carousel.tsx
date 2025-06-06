@@ -7,22 +7,22 @@ interface CarouselProps {
   children: React.ReactNode;
   className?: string;
   thumbnails?: string[];
-  thumbnailNavPosition?: React.CSSProperties;
   onSlideChange?: (index: number) => void;
   initialSlide?: number;
   selectedScales?: number[];
   thumbnailGap?: number;
+  items?: any[];
 }
 
 const Carousel = ({
   children,
   className,
   thumbnails,
-  thumbnailNavPosition,
   onSlideChange,
   initialSlide = 0,
   selectedScales,
   thumbnailGap,
+  items = [],
 }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialSlide);
   const totalSlides = React.Children.count(children);
@@ -51,14 +51,14 @@ const Carousel = ({
 
   return (
     <div
-      className={`relative w-full   mx-auto overflow-hidden ${className || ""}`}
+      className={`relative w-full mx-auto overflow-hidden ${className || ""}`}
     >
       {/* Carousel Content */}
       <div className="relative w-full h-full">
         {React.Children.map(children, (child, index) => (
           <div
             key={index}
-            className={`absolute  inset-0 flex items-center justify-center transition-opacity duration-500 ${
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
               index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
@@ -73,7 +73,7 @@ const Carousel = ({
           onClick={goToPrevious}
           className="bg-white/70 hover:bg-white text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 z-20"
         >
-          <ChevronLeft className="w-8 h-8" />
+          <ChevronLeft className="w-8 h-8" /> 
         </button>
         <button
           onClick={goToNext}
@@ -85,35 +85,32 @@ const Carousel = ({
 
       {/* Thumbnail Navigation */}
       {thumbnails && (
-        <div
-          className="absolute left-0 right-0 flex justify-center space-x-1 z-10"
-          style={thumbnailNavPosition}
-        >
+        <div className="absolute left-0 right-0 flex justify-center space-x-1 z-10">
           <div
             className="flex items-end px-6 sm:px-0"
             style={{ gap: `${thumbnailGap ?? 8}px`, height: "110px" }}
           >
             {thumbnails.map((src, index) => {
-              const scale =
-                selectedScales && selectedScales[index]
-                  ? selectedScales[index]
-                  : 1.7;
+              const scale = selectedScales?.[index] ?? 1.7;
+              const position = items[index]?.thumbnailNavPosition || { bottom: 0 };
+              const thumbStyle = items[index]?.thumbnailStyle || { width: 205, height: 105 };
+              
               return (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`border-transparent transition-transform`}
-                  style={
-                    index === currentIndex
-                      ? { transform: `scale(${scale})` }
-                      : {}
-                  }
+                  className="border-transparent transition-transform"
+                  style={{
+                    transform: index === currentIndex ? `scale(${scale})` : undefined,
+                    position: 'relative',
+                    ...position
+                  }}
                 >
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
-                    width={205}
-                    height={105}
+                    width={thumbStyle.width}
+                    height={thumbStyle.height}
                     className="rounded h-full object-contain"
                   />
                 </button>
