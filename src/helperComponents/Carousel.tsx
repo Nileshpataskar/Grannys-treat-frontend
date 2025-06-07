@@ -14,6 +14,26 @@ interface CarouselProps {
   items?: any[];
 }
 
+// Responsive breakpoint hook
+const breakpoints = { xs: 0, sm: 640, md: 768, lg: 1024, xl: 1280 };
+function useBreakpoint() {
+  const [breakpoint, setBreakpoint] = useState("md");
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width < breakpoints.sm) setBreakpoint("xs");
+      else if (width < breakpoints.md) setBreakpoint("sm");
+      else if (width < breakpoints.lg) setBreakpoint("md");
+      else if (width < breakpoints.xl) setBreakpoint("lg");
+      else setBreakpoint("xl");
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return breakpoint;
+}
+
 const Carousel = ({
   children,
   className,
@@ -26,6 +46,7 @@ const Carousel = ({
 }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialSlide);
   const totalSlides = React.Children.count(children);
+  const breakpoint = useBreakpoint();
 
   // Update currentIndex when initialSlide changes
   useEffect(() => {
@@ -67,43 +88,34 @@ const Carousel = ({
         ))}
       </div>
 
-      {/* Navigation Buttons - Carousel left/right navigation */}
-      {/* <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 -translate-y-1/2 z-10">
-        <button
-          onClick={goToPrevious}
-          className="bg-white/70 hover:bg-white text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 z-20"
-        >
-          <ChevronLeft className="w-8 h-8" /> 
-        </button>
-        <button
-          onClick={goToNext}
-          className="bg-white/70 hover:bg-white text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 z-20"
-        >
-          <ChevronRight className="w-8 h-8" />
-        </button>
-      </div> */}
-
       {/* Thumbnail Navigation */}
       {thumbnails && (
         <div className="absolute left-0 right-0 flex justify-center space-x-1 z-10">
           <div
-            className="flex items-end px-6 sm:px-0"
-            style={{ gap: `${thumbnailGap ?? 8}px`, height: "110px" }}
+            className={
+              `flex items-end px-2 sm:px-6 md:px-0 ` +
+              (breakpoint === 'xs' || breakpoint === 'sm' ? 'h-[60px]' : 'h-[110px]')
+            }
+            style={{ gap: `${breakpoint === 'xs' || breakpoint === 'sm' ? 4 : (thumbnailGap ?? 8)}px` }}
           >
             {thumbnails.map((src, index) => {
               const scale = selectedScales?.[index] ?? 1.7;
-              const position = items[index]?.thumbnailNavPosition || { bottom: 0 };
-              const thumbStyle = items[index]?.thumbnailStyle || { width: 205, height: 105 };
-              
+              const position = items[index]?.responsiveThumbnailNavPosition?.[breakpoint] || items[index]?.thumbnailNavPosition || { bottom: 0 };
+              let thumbStyle = (items[index]?.thumbnailStyle?.responsive?.[breakpoint]) || items[index]?.thumbnailStyle || { width: 205, height: 105 };
+              // Reduce thumbnail size for mobile
+              if (breakpoint === 'xs' || breakpoint === 'sm') {
+                thumbStyle = { width: Math.round(thumbStyle.width * 0.6), height: Math.round(thumbStyle.height * 0.6) };
+              }
               return (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className="border-transparent transition-transform"
+                  className="border-transparent transition-transform focus:outline-none"
                   style={{
                     transform: index === currentIndex ? `scale(${scale})` : undefined,
                     position: 'relative',
-                    ...position
+                    ...position,
+                    minWidth: 36, minHeight: 24, // ensure tap target
                   }}
                 >
                   <img

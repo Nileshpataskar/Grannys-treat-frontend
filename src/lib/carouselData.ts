@@ -10,10 +10,34 @@ export const productCategories = [
         subtext2: "A smooth and refreshing probiotic drink that's gentle on your stomach and perfect for daily use, any time of the day.",
         subtext3: "Classic taste with probiotic comfort. ",
         colorbg: "#88c0f8",
-        imgStyle: { width: 450, height: 400, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 260, height: 105 },
+        imgStyle: {
+          width: 450, height: 400, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 150, height: 200, top: -100, marginBottom: 0 },
+            sm: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            md: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            lg: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            xl: { width: 450, height: 400, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 260, height: 105,
+          responsive: {
+            xs: { width: 260, height: 105 },
+            sm: { width: 260, height: 105 },
+            md: { width: 260, height: 105 },
+            lg: { width: 260, height: 105 },
+            xl: { width: 260, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: -30 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 0 },
+          sm: { bottom: 0 },
+          md: { bottom: 0 },
+          lg: { bottom: -30 },
+          xl: { bottom: -30 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/rose.png",
@@ -48,10 +72,34 @@ export const productCategories = [
         subtext2: "Real strawberry pulp and probiotic curd come together for a fruity, creamy treat that's easy on the gut.",
         subtext3: "A healthy dessert alternative, naturally sweet.",
         colorbg: "#e44556",
-        imgStyle: { width: 450, height: 400, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 260, height: 105 },
+        imgStyle: {
+          width: 450, height: 400, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            sm: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            md: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            lg: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            xl: { width: 450, height: 400, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 260, height: 105,
+          responsive: {
+            xs: { width: 260, height: 105 },
+            sm: { width: 260, height: 105 },
+            md: { width: 260, height: 105 },
+            lg: { width: 260, height: 105 },
+            xl: { width: 260, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: -30 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 0 },
+          sm: { bottom: -30 },
+          md: { bottom: -30 },
+          lg: { bottom: -30 },
+          xl: { bottom: -30 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/strawberry.png",
@@ -78,10 +126,34 @@ export const productCategories = [
         subtext2: "Blueberry blended into cultured dairy for a tangy, refreshing lassi that energises and supports digestion.",
         subtext3: "Perfect pick-me-up with antioxidants.",
         colorbg: "#b691c5",
-        imgStyle: { width: 450, height: 400, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 260, height: 105 },
+        imgStyle: {
+          width: 450, height: 400, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            sm: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            md: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            lg: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            xl: { width: 450, height: 400, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 260, height: 105,
+          responsive: {
+            xs: { width: 260, height: 105 },
+            sm: { width: 260, height: 105 },
+            md: { width: 260, height: 105 },
+            lg: { width: 260, height: 105 },
+            xl: { width: 260, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: -30 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: -30 },
+          sm: { bottom: -30 },
+          md: { bottom: -30 },
+          lg: { bottom: -30 },
+          xl: { bottom: -30 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/blueberry.png",
@@ -99,20 +171,43 @@ export const productCategories = [
             left: -60,
             zIndex: 50
           }
-
         }
       },
       {
         title: "Lassi Mango 200g",
         image: "/assets/ProductImages/Lassi Mango.webp",
         subtext1: "Our lassi brings together smooth cultured curd and delightful flavours to create a refreshing, creamy drink. Whether plain or fruity, each cup offers a gentle boost of probiotics and a satisfying sip rooted in traditional Indian goodness.",
-        subtext2: "Sweet Alphonso mango blended with probiotic lassi to give you a tropical, creamy drink that’s full of flavour and gut goodness.",
+        subtext2: "Sweet Alphonso mango blended with probiotic lassi to give you a tropical, creamy drink that's full of flavour and gut goodness.",
         subtext3: "Tropical mango, creamy and nourishing.",
         colorbg: "#f28e47",
-        imgStyle: { width: 450, height: 400, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 260, height: 105 },
+        imgStyle: {
+          width: 450, height: 400, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            sm: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            md: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            lg: { width: 450, height: 400, top: -100, marginBottom: 0 },
+            xl: { width: 450, height: 400, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 260, height: 105,
+          responsive: {
+            xs: { width: 260, height: 105 },
+            sm: { width: 260, height: 105 },
+            md: { width: 260, height: 105 },
+            lg: { width: 260, height: 105 },
+            xl: { width: 260, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: -30 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: -30 },
+          sm: { bottom: -30 },
+          md: { bottom: -30 },
+          lg: { bottom: -30 },
+          xl: { bottom: -30 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/yellow.png",
@@ -153,10 +248,34 @@ export const productCategories = [
         subtext2: "A smooth, refreshing buttermilk made from cultured curd — easy to digest, hydrating, and a gentle support for your gut health.",
         subtext3: "Refreshing, gentle, gut-friendly drink",
         colorbg: "#f3cb8e",
-        imgStyle: { width: 500, height: 260, top: -120, marginBottom: 0 },
-        thumbnailStyle: { width: 300, height: 200 },
+        imgStyle: {
+          width: 500, height: 260, top: -120, marginBottom: 0,
+          responsive: {
+            xs: { width: 500, height: 260, top: -120, marginBottom: 0 },
+            sm: { width: 500, height: 260, top: -120, marginBottom: 0 },
+            md: { width: 500, height: 260, top: -120, marginBottom: 0 },
+            lg: { width: 500, height: 260, top: -120, marginBottom: 0 },
+            xl: { width: 500, height: 260, top: -120, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 300, height: 200,
+          responsive: {
+            xs: { width: 300, height: 200 },
+            sm: { width: 300, height: 200 },
+            md: { width: 300, height: 200 },
+            lg: { width: 300, height: 200 },
+            xl: { width: 300, height: 200 }
+          }
+        },
         selectedScale: 1.4,
-        thumbnailNavPosition: { bottom: -60 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: -60 },
+          sm: { bottom: -60 },
+          md: { bottom: -60 },
+          lg: { bottom: -60 },
+          xl: { bottom: -60 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/cardamom.png",
@@ -191,10 +310,34 @@ export const productCategories = [
         subtext2: "Enjoy it at breakfast topped with fruit or in a smoothie.",
         subtext3: "It is also a versatile culinary ingredient",
         colorbg: "#93cda2",
-        imgStyle: { width: 450, height: 260, top: -120, marginBottom: 0 },
-        thumbnailStyle: { width: 205, height: 105 },
+        imgStyle: {
+          width: 450, height: 260, top: -120, marginBottom: 0,
+          responsive: {
+            xs: { width: 450, height: 260, top: -120, marginBottom: 0 },
+            sm: { width: 450, height: 260, top: -120, marginBottom: 0 },
+            md: { width: 450, height: 260, top: -120, marginBottom: 0 },
+            lg: { width: 450, height: 260, top: -120, marginBottom: 0 },
+            xl: { width: 450, height: 260, top: -120, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 205, height: 105,
+          responsive: {
+            xs: { width: 205, height: 105 },
+            sm: { width: 205, height: 105 },
+            md: { width: 205, height: 105 },
+            lg: { width: 205, height: 105 },
+            xl: { width: 205, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: 50 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 50 },
+          sm: { bottom: 50 },
+          md: { bottom: 50 },
+          lg: { bottom: 50 },
+          xl: { bottom: 50 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/cardamom.png",
@@ -229,10 +372,34 @@ export const productCategories = [
         subtext2: "Enjoy it at breakfast topped with fruit or in a smoothie.",
         subtext3: "It is also a versatile culinary ingredient",
         colorbg: "#5dc726",
-        imgStyle: { width: 460, height: 260, top: 20, marginBottom: 0 },
-        thumbnailStyle: { width: 300, height: 105 },
+        imgStyle: {
+          width: 460, height: 260, top: 20, marginBottom: 0,
+          responsive: {
+            xs: { width: 460, height: 260, top: 20, marginBottom: 0 },
+            sm: { width: 460, height: 260, top: 20, marginBottom: 0 },
+            md: { width: 460, height: 260, top: 20, marginBottom: 0 },
+            lg: { width: 460, height: 260, top: 20, marginBottom: 0 },
+            xl: { width: 460, height: 260, top: 20, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 300, height: 105,
+          responsive: {
+            xs: { width: 300, height: 105 },
+            sm: { width: 300, height: 105 },
+            md: { width: 300, height: 105 },
+            lg: { width: 300, height: 105 },
+            xl: { width: 300, height: 105 }
+          }
+        },
         selectedScale: 1.3,
-        thumbnailNavPosition: { bottom: 15 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 15 },
+          sm: { bottom: 15 },
+          md: { bottom: 15 },
+          lg: { bottom: 15 },
+          xl: { bottom: 15 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/directly-leaves.png",
@@ -269,14 +436,38 @@ export const productCategories = [
       {
         title: "Dahi 100g",
         image: "/assets/ProductImages/Dahi 100g.png",
-        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it’s a nourishing, versatile staple that fits seamlessly into any lifestyle.",
+        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it's a nourishing, versatile staple that fits seamlessly into any lifestyle.",
         subtext2: "Snack-ready, portioned curd with probiotics — light, healthy and perfect for daily gut balance.",
         subtext3: "Low-fat, probiotic-packed goodness",
         colorbg: "#61b4e1",
-        imgStyle: { width: 400, height: 220, top: 40, marginBottom: 0 },
-        thumbnailStyle: { width: 250, height: 105 },
+        imgStyle: {
+          width: 400, height: 220, top: 40, marginBottom: 0,
+          responsive: {
+            xs: { width: 400, height: 220, top: 40, marginBottom: 0 },
+            sm: { width: 400, height: 220, top: 40, marginBottom: 0 },
+            md: { width: 400, height: 220, top: 40, marginBottom: 0 },
+            lg: { width: 400, height: 220, top: 40, marginBottom: 0 },
+            xl: { width: 400, height: 220, top: 40, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 250, height: 105,
+          responsive: {
+            xs: { width: 250, height: 105 },
+            sm: { width: 250, height: 105 },
+            md: { width: 250, height: 105 },
+            lg: { width: 250, height: 105 },
+            xl: { width: 250, height: 105 }
+          }
+        },
         selectedScale: 1.3,
-        thumbnailNavPosition: { bottom: 30 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 30 },
+          sm: { bottom: 30 },
+          md: { bottom: 30 },
+          lg: { bottom: 30 },
+          xl: { bottom: 30 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/rose.png",
@@ -307,14 +498,38 @@ export const productCategories = [
       {
         title: "Dahi 200g",
         image: "/assets/ProductImages/Dahi 200g.png",
-        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it’s a nourishing, versatile staple that fits seamlessly into any lifestyle.",
-        subtext2: "A smooth, low-fat probiotic curd that’s great for solo meals, breakfast bowls, or pairing with fruits and cereals.",
+        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it's a nourishing, versatile staple that fits seamlessly into any lifestyle.",
+        subtext2: "A smooth, low-fat probiotic curd that's great for solo meals, breakfast bowls, or pairing with fruits and cereals.",
         subtext3: "Smooth, nourishing, and ready to eat.",
         colorbg: "#61b4e1",
-        imgStyle: { width: 400, height: 220, top: -200, marginBottom: 0 },
-        thumbnailStyle: { width: 205, height: 105 },
+        imgStyle: {
+          width: 400, height: 220, top: 40, marginBottom: 0,
+          responsive: {
+            xs: { width: 400, height: 220, top: -100, marginBottom: 0 },
+            sm: { width: 400, height: 220, top: -100, marginBottom: 0 },
+            md: { width: 400, height: 220, top: -100, marginBottom: 0 },
+            lg: { width: 400, height: 220, top: -100, marginBottom: 0 },
+            xl: { width: 400, height: 220, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 205, height: 105,
+          responsive: {
+            xs: { width: 205, height: 105 },
+            sm: { width: 205, height: 105 },
+            md: { width: 205, height: 105 },
+            lg: { width: 205, height: 105 },
+            xl: { width: 205, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: 0 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 0 },
+          sm: { bottom: 0 },
+          md: { bottom: 0 },
+          lg: { bottom: 0 },
+          xl: { bottom: 0 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/rose.png",
@@ -345,14 +560,38 @@ export const productCategories = [
       {
         title: "Dahi 350g",
         image: "/assets/ProductImages/Dahi 350g.png",
-        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it’s a nourishing, versatile staple that fits seamlessly into any lifestyle.",
-        subtext2: "A family-sized pouch of probiotic curd that’s low in fat, full of nourishment, and perfect for everyday kitchen use.",
+        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it's a nourishing, versatile staple that fits seamlessly into any lifestyle.",
+        subtext2: "A family-sized pouch of probiotic curd that's low in fat, full of nourishment, and perfect for everyday kitchen use.",
         subtext3: "Everyday curd made healthier.",
         colorbg: "#61b4e1",
-        imgStyle: { width: 400, height: 220, top: -200, marginBottom: 0 },
-        thumbnailStyle: { width: 250, height: 105 },
+        imgStyle: {
+          width: 400, height: 220, top: -200, marginBottom: 0,
+          responsive: {
+            xs: { width: 400, height: 220, top: -200, marginBottom: 0 },
+            sm: { width: 400, height: 220, top: -200, marginBottom: 0 },
+            md: { width: 400, height: 220, top: -200, marginBottom: 0 },
+            lg: { width: 400, height: 220, top: -200, marginBottom: 0 },
+            xl: { width: 400, height: 220, top: -200, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 250, height: 105,
+          responsive: {
+            xs: { width: 250, height: 105 },
+            sm: { width: 250, height: 105 },
+            md: { width: 250, height: 105 },
+            lg: { width: 250, height: 105 },
+            xl: { width: 250, height: 105 }
+          }
+        },
         selectedScale: 1.3,
-        thumbnailNavPosition: { bottom: -20 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: -20 },
+          sm: { bottom: -20 },
+          md: { bottom: -20 },
+          lg: { bottom: -20 },
+          xl: { bottom: -20 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/rose.png",
@@ -383,14 +622,38 @@ export const productCategories = [
       {
         title: "Dahi 180g",
         image: "/assets/ProductImages/Dahi 180g.png",
-        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it’s a nourishing, versatile staple that fits seamlessly into any lifestyle.",
+        subtext1: "Crafted from fresh milk and live cultures, our probiotic dahi is creamy, low in fat, and full of gut-friendly bacteria. Ideal for daily meals or snacking, it's a nourishing, versatile staple that fits seamlessly into any lifestyle.",
         subtext2: "Compact, travel-friendly and tasty — this pouch of probiotic curd keeps your gut happy wherever you go.",
         subtext3: "Easy to carry, good for gut..",
         colorbg: "#61b4e1",
-        imgStyle: { width: 450, height: 220, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 250, height: 105 },
+        imgStyle: {
+          width: 450, height: 220, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 450, height: 220, top: -100, marginBottom: 0 },
+            sm: { width: 450, height: 220, top: -100, marginBottom: 0 },
+            md: { width: 450, height: 220, top: -100, marginBottom: 0 },
+            lg: { width: 450, height: 220, top: -100, marginBottom: 0 },
+            xl: { width: 450, height: 220, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 250, height: 105,
+          responsive: {
+            xs: { width: 250, height: 105 },
+            sm: { width: 250, height: 105 },
+            md: { width: 250, height: 105 },
+            lg: { width: 250, height: 105 },
+            xl: { width: 250, height: 105 }
+          }
+        },
         selectedScale: 1.6,
-        thumbnailNavPosition: { bottom: 30 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 30 },
+          sm: { bottom: 30 },
+          md: { bottom: 30 },
+          lg: { bottom: 30 },
+          xl: { bottom: 30 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/rose.png",
@@ -431,10 +694,34 @@ export const productCategories = [
         subtext2: "Convenient sized fresh paneer that's perfect for small households and specific recipes.",
         subtext3: "Fresh and protein-rich",
         colorbg: "#9ed1a6",
-        imgStyle: { width: 250, height: 120, top: -250, marginBottom: 0 },
-        thumbnailStyle: { width: 200, height: 105 },
+        imgStyle: {
+          width: 250, height: 120, top: -250, marginBottom: 0,
+          responsive: {
+            xs: { width: 250, height: 120, top: 0, marginBottom: 0 },
+            sm: { width: 250, height: 120, top: 0, marginBottom: 0 },
+            md: { width: 250, height: 120, top: 0, marginBottom: 0 },
+            lg: { width: 250, height: 120, top: 0, marginBottom: 0 },
+            xl: { width: 250, height: 120, top: 0, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 200, height: 105,
+          responsive: {
+            xs: { width: 200, height: 105 },
+            sm: { width: 200, height: 105 },
+            md: { width: 200, height: 105 },
+            lg: { width: 200, height: 105 },
+            xl: { width: 200, height: 105 }
+          }
+        },
         selectedScale: 1.2,
-        thumbnailNavPosition: { bottom: -90 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: -90 },
+          sm: { bottom: -90 },
+          md: { bottom: -90 },
+          lg: { bottom: -90 },
+          xl: { bottom: -90 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/leaf-2.png",
@@ -481,10 +768,34 @@ export const productCategories = [
         subtext2: "Larger serving of fresh paneer perfect for family meals and special recipes.",
         subtext3: "Rich in protein and calcium",
         colorbg: "#14871f",
-        imgStyle: { width: 250, height: 150, top: -200, marginBottom: 0 },
-        thumbnailStyle: { width: 205, height: 105 },
+        imgStyle: {
+          width: 250, height: 150, top: -200, marginBottom: 0,
+          responsive: {
+            xs: { width: 250, height: 150, top: -200, marginBottom: 0 },
+            sm: { width: 250, height: 150, top: -200, marginBottom: 0 },
+            md: { width: 250, height: 150, top: -200, marginBottom: 0 },
+            lg: { width: 250, height: 150, top: -200, marginBottom: 0 },
+            xl: { width: 250, height: 150, top: -200, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 205, height: 105,
+          responsive: {
+            xs: { width: 205, height: 105 },
+            sm: { width: 205, height: 105 },
+            md: { width: 205, height: 105 },
+            lg: { width: 205, height: 105 },
+            xl: { width: 205, height: 105 }
+          }
+        },
         selectedScale: 1.2,
-        thumbnailNavPosition: { bottom: -50 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: -50 },
+          sm: { bottom: -50 },
+          md: { bottom: -50 },
+          lg: { bottom: -50 },
+          xl: { bottom: -50 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/leaf-2.png",
@@ -537,10 +848,34 @@ export const productCategories = [
         subtext2: "A delicious blend of real strawberries and probiotic-rich yogurt for a healthy treat any time of day.",
         subtext3: "Natural fruit goodness",
         colorbg: "#fc758c",
-        imgStyle: { width: 500, height: 220, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 300, height: 105 },
+        imgStyle: {
+          width: 500, height: 220, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 300, height: 105,
+          responsive: {
+            xs: { width: 300, height: 105 },
+            sm: { width: 300, height: 105 },
+            md: { width: 300, height: 105 },
+            lg: { width: 300, height: 105 },
+            xl: { width: 300, height: 105 }
+          }
+        },
         selectedScale: 1.4,
-        thumbnailNavPosition: { bottom: 40 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 40 },
+          sm: { bottom: 40 },
+          md: { bottom: 40 },
+          lg: { bottom: 40 },
+          xl: { bottom: 40 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/strawberry-group.png",
@@ -567,10 +902,34 @@ export const productCategories = [
         subtext2: "Sweet, creamy mango-flavored yogurt enriched with probiotics for gut health and immunity.",
         subtext3: "Tropical probiotic delight",
         colorbg: "#fdc858",
-        imgStyle: { width: 500, height: 220, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 300, height: 105 },
+        imgStyle: {
+          width: 500, height: 220, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 300, height: 105,
+          responsive: {
+            xs: { width: 300, height: 105 },
+            sm: { width: 300, height: 105 },
+            md: { width: 300, height: 105 },
+            lg: { width: 300, height: 105 },
+            xl: { width: 300, height: 105 }
+          }
+        },
         selectedScale: 1.4,
-        thumbnailNavPosition: { bottom: 40 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 40 },
+          sm: { bottom: 40 },
+          md: { bottom: 40 },
+          lg: { bottom: 40 },
+          xl: { bottom: 40 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/yellow.png",
@@ -603,10 +962,34 @@ export const productCategories = [
         subtext2: "A perfect blend of strained yogurt and cardamom, creating a rich, aromatic dessert experience.",
         subtext3: "Traditional Indian sweet",
         colorbg: "#8bc960",
-        imgStyle: { width: 500, height: 220, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 305, height: 105 },
+        imgStyle: {
+          width: 500, height: 220, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 305, height: 105,
+          responsive: {
+            xs: { width: 305, height: 105 },
+            sm: { width: 305, height: 105 },
+            md: { width: 305, height: 105 },
+            lg: { width: 305, height: 105 },
+            xl: { width: 305, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: 20 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 20 },
+          sm: { bottom: 20 },
+          md: { bottom: 20 },
+          lg: { bottom: 20 },
+          xl: { bottom: 20 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/ac.png",
@@ -652,10 +1035,34 @@ export const productCategories = [
         subtext2: "Premium shrikhand enriched with almonds and pistachios, offering a royal dessert experience.",
         subtext3: "Nutty and aromatic",
         colorbg: "#e9b26d",
-        imgStyle: { width: 500, height: 220, top: -100, marginBottom: 0 },
-        thumbnailStyle: { width: 305, height: 105 },
+        imgStyle: {
+          width: 500, height: 220, top: -100, marginBottom: 0,
+          responsive: {
+            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+          }
+        },
+        thumbnailStyle: {
+          width: 305, height: 105,
+          responsive: {
+            xs: { width: 305, height: 105 },
+            sm: { width: 305, height: 105 },
+            md: { width: 305, height: 105 },
+            lg: { width: 305, height: 105 },
+            xl: { width: 305, height: 105 }
+          }
+        },
         selectedScale: 1.5,
-        thumbnailNavPosition: { bottom: 20 },
+        responsiveThumbnailNavPosition: {
+          xs: { bottom: 20 },
+          sm: { bottom: 20 },
+          md: { bottom: 20 },
+          lg: { bottom: 20 },
+          xl: { bottom: 20 }
+        },
         decorativeImages: {
           image1: {
             path: "/assets/p3/pistachios.png",
@@ -667,7 +1074,6 @@ export const productCategories = [
           },
           image2: {
             path: "/assets/p3/almonds.png",
-
             width: 150,
             height: 150,
             bottom: 70,
@@ -700,7 +1106,6 @@ export const productCategories = [
             zIndex: 0,
             rotate: 5
           },
-         
         }
       },
     ],

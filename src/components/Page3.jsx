@@ -1,7 +1,7 @@
 // Page3.jsx
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Carousel from "../helperComponents/Carousel";
 import { productCategories } from "../lib/carouselData";
 import OptimizedImage from "./OptimizedImage";
@@ -17,6 +17,26 @@ productCategories.forEach(cat => {
   });
 });
 
+// Responsive breakpoint hook
+const breakpoints = { xs: 0, sm: 640, md: 768, lg: 1024, xl: 1280 };
+function useBreakpoint() {
+  const [breakpoint, setBreakpoint] = useState("md");
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width < breakpoints.sm) setBreakpoint("xs");
+      else if (width < breakpoints.md) setBreakpoint("sm");
+      else if (width < breakpoints.lg) setBreakpoint("md");
+      else if (width < breakpoints.xl) setBreakpoint("lg");
+      else setBreakpoint("xl");
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return breakpoint;
+}
+
 const Page3 = () => {
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -25,6 +45,7 @@ const Page3 = () => {
   const currentItem = category.items[currentImageIndex];
   const selectedScales = category.items.map((item) => item.selectedScale || 1.7);
   const thumbnailGap = category.thumbnailGap || 8;
+  const breakpoint = useBreakpoint();
 
   const prevCategory = () => {
     setCategoryIndex((i) => (i === 0 ? productCategories.length - 1 : i - 1));
@@ -71,131 +92,185 @@ const Page3 = () => {
         thumbnailGap={thumbnailGap}
         items={category.items}
       >
-        {category.items.map((item, idx) => (
-          <div
-            key={idx}
-            className="w-full h-full flex flex-col items-center justify-start text-white text-lg sm:text-xl md:text-2xl font-bold transition-all duration-500"
-            style={{ backgroundColor: item.colorbg }}
-          >
-            {/* Div 1 - Product Title - 20vh */}
-            <div className="w-full h-[40vh] flex items-center justify-center">
-              <h1 className="text-2xl sm:text-3xl lg:text-6xl font-[Fredoka] transition-all duration-500">
-                {item.title}
-              </h1>
-            </div>
-
-            {/* Main Content Area - 50vh */}
-            <div className="w-full h-[60vh] flex items-center  ">
-              {/* Div 2 - Left Space with Description */}
-              <div className="w-3/8 h-full flex flex-col  items-start justify-center relative px-4 ">
-                <div className="max-w-[500px] ml-32 mr-6">
-                  <p className="text-2xl leading-relaxed text-white mb-6 font-[Fredoka] font-normal ">
-                    {item.subtext1}
-                  </p>
-                  <div className="relative w-[200px] cursor-pointer hover:scale-105 transition-transform">
-                    <img
-                      src="/assets/page3/page3_locate.png"
-                      alt="locate us"
-                      className="w-full h-auto"
-                    />
-
+        {category.items.map((item, idx) => {
+          const imgStyle = item.imgStyle?.responsive?.[breakpoint] || item.imgStyle;
+          return (
+            <div
+              key={idx}
+              className="w-full h-full flex flex-col items-center justify-start text-white text-lg sm:text-xl md:text-2xl font-bold transition-all duration-500"
+              style={{ backgroundColor: item.colorbg }}
+            >
+              {/* Responsive order for mobile/tablet vs desktop */}
+              {['xs', 'sm', 'md'].includes(breakpoint) ? (
+                <div className="flex flex-col gap-y-5">
+                  {/* Div 1 - Product Title */}
+                  <div className="w-full flex items-center justify-center mt-8 mb-4">
+                    <h1 className="text-3xl sm:text-4xl font-[Fredoka] font-bold text-white drop-shadow-md text-center">
+                      {item.title}
+                    </h1>
                   </div>
-                </div>
-              </div>
-
-              {/* Div 3 - Main Product Image */}
-              <div className="w-3/8 h-full flex items-center justify-center ">
-                <OptimizedImage
-                  src={item.image}
-                  alt={item.title}
-                  width={item.imgStyle?.width}
-                  height={item.imgStyle?.height}
-                  style={{
-                    marginTop: item.imgStyle?.top || 0,
-                    marginBottom: item.imgStyle?.marginBottom || 0,
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                    objectFit: 'contain',
-                    display: 'inline-block',
-                  }}
-                  className="transition-all duration-500"
-                />
-              </div>
-
-              {/* Div 4 - Right Space with Features */}
-              <div className="w-3/8 h-full relative">
-                {/* First star with text */}
-                <div className="absolute w-[480px] h-[380px] -top-15 -left-30 z-10">
-                  {/* Star background with text */}
-                  <div className="relative w-full h-full">
-                    {/* Star background */}
-                    <div
-                      className="w-full h-full"
+                  {/* Div 3 - Main Product Image */}
+                  <div className="w-full flex items-center justify-center mb-8">
+                    <OptimizedImage
+                      src={item.image}
+                      alt={item.title}
+                      width={imgStyle?.width || 220}
+                      height={imgStyle?.height || 180}
                       style={{
-                        background: `url('/assets/page3/page3_star.svg') no-repeat center center`,
-                        backgroundSize: 'contain'
+                        marginTop: imgStyle?.top || 0,
+                        marginBottom: imgStyle?.marginBottom || 0,
+                        maxWidth: imgStyle?.width ? imgStyle.width : '60vw',
+                        maxHeight: imgStyle?.height ? imgStyle.height : '22vh',
+                        objectFit: 'contain',
+                        display: 'inline-block',
                       }}
+                      className="transition-all duration-500 drop-shadow-lg rounded-xl"
                     />
-                    {/* Text container */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-[400px]">
-                      <p className="text-2xl font-[Fredoka] text-black font-medium">
-                        {item.subtext2}
-                      </p>
+                  </div>
+                  {/* Div 2 - Description */}
+                  <div className="w-full flex flex-col items-center justify-center px-4 py-2">
+                    <p className="text-base sm:text-lg leading-relaxed text-white mb-6 font-[Fredoka] font-normal text-center max-w-md mx-auto">
+                      {item.subtext1}
+                    </p>
+                    <div className="relative w-[140px] sm:w-[180px] cursor-pointer hover:scale-105 transition-transform mx-auto mt-2 mb-6">
+                      <img
+                        src="/assets/page3/page3_locate.png"
+                        alt="locate us"
+                        className="w-full h-auto drop-shadow-md"
+                      />
+                    </div>
+                  </div>
+                  {/* Div 5 - Counter */}
+                  <div className="w-full flex flex-col items-center justify-center gap-2 mt-2 mb-4">
+                    <div className="text-lg sm:text-xl font-[Fredoka] font-normal text-black">
+                      {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
                     </div>
                   </div>
                 </div>
-
-                {/* Second star with text */}
-                <div className="absolute w-[300px] h-[200px] top-70 right-30 z-20">
-                  {/* Star background with text */}
-                  <div className="relative w-full h-full">
-                    {/* Star background */}
-                    <div
-                      className="w-full h-full"
-                      style={{
-                        background: `url('/assets/page3/page3_star2.svg') no-repeat center center`,
-                        backgroundSize: 'contain'
-                      }}
-                    />
-                    {/* Text container */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-[250px]">
-                      <p className="text-xl font-[Fredoka] text-black font-medium">
-                        {item.subtext3}
-                      </p>
-                    </div>
+              ) : (
+                <>
+                  {/* Div 1 - Product Title - 20vh */}
+                  <div className="w-full h-[40vh] flex items-center justify-center">
+                    <h1 className="text-2xl sm:text-3xl lg:text-6xl font-[Fredoka] transition-all duration-500">
+                      {item.title}
+                    </h1>
                   </div>
-                </div>
+                  {/* Main Content Area - 50vh */}
+                  <div className="w-full h-[60vh] flex flex-col md:flex-row items-center md:items-stretch">
+                    {/* Div 2 - Left Space with Description */}
+                    <div className="w-full md:w-3/8 h-auto md:h-full flex flex-col items-start justify-center relative px-4 py-4 md:py-0">
+                      <div className="max-w-full md:max-w-[500px] mx-auto md:ml-32 md:mr-6">
+                        <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-white mb-4 md:mb-6 font-[Fredoka] font-normal ">
+                          {item.subtext1}
+                        </p>
+                        <div className="relative w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer hover:scale-105 transition-transform mx-auto md:mx-0">
+                          <img
+                            src="/assets/page3/page3_locate.png"
+                            alt="locate us"
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Div 3 - Main Product Image */}
+                    <div className="w-full flex-col md:w-3/8 h-full flex items-center justify-around ">
+                      <OptimizedImage
+                        src={item.image}
+                        alt={item.title}
+                        width={imgStyle?.width || 350}
+                        height={imgStyle?.height || 300}
+                        style={{
+                          marginTop: imgStyle?.top || 0,
+                          marginBottom: imgStyle?.marginBottom || 0,
+                          maxWidth: imgStyle?.width ? imgStyle.width : '28vw',
+                          maxHeight: imgStyle?.height ? imgStyle.height : '60vh',
+                          objectFit: 'contain',
+                          display: 'inline-block',
+                        }}
+                        className="drop-shadow-lg rounded-xl"
+                      />
+                    </div>
+                    {/* Div 4 - Right Space with Features */}
+                    {['md', 'lg', 'xl'].includes(breakpoint) && (
+                      <div className="w-3/8 h-full relative">
+                        {/* First star with text */}
+                        <div className="absolute w-[480px] h-[380px] -top-15 -left-30 z-10">
+                          {/* Star background with text */}
+                          <div className="relative w-full h-full">
+                            {/* Star background */}
+                            <div
+                              className="w-full h-full"
+                              style={{
+                                background: `url('/assets/page3/page3_star.svg') no-repeat center center`,
+                                backgroundSize: 'contain'
+                              }}
+                            />
+                            {/* Text container */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-[400px]">
+                              <p className="text-2xl font-[Fredoka] text-black font-medium">
+                                {item.subtext2}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Second star with text */}
+                        <div className="absolute w-[300px] h-[200px] top-70 right-30 z-20">
+                          {/* Star background with text */}
+                          <div className="relative w-full h-full">
+                            {/* Star background */}
+                            <div
+                              className="w-full h-full"
+                              style={{
+                                background: `url('/assets/page3/page3_star2.svg') no-repeat center center`,
+                                backgroundSize: 'contain'
+                              }}
+                            />
+                            {/* Text container */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-[250px]">
+                              <p className="text-xl font-[Fredoka] text-black font-medium">
+                                {item.subtext3}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Decorative Images */}
+                        {item.decorativeImages && Object.entries(item.decorativeImages).map(([key, image]) => {
+                          const decoStyle = image.responsive?.[breakpoint] || image;
+                          return (
+                            <img
+                              key={key}
+                              src={image.path}
+                              alt={`Decorative ${key}`}
+                              className="absolute object-contain"
+                              style={{
+                                width: decoStyle.width,
+                                height: decoStyle.height,
+                                top: decoStyle.top,
+                                left: decoStyle.left,
+                                right: decoStyle.right,
+                                bottom: decoStyle.bottom,
+                                zIndex: decoStyle.zIndex,
+                                transform: decoStyle.rotate ? `rotate(${decoStyle.rotate}deg)` : undefined
+                              }}
+                            />
+                          );
+                        })}
 
-                {/* Decorative Images */}
-                {item.decorativeImages && Object.entries(item.decorativeImages).map(([key, image]) => (
-                  <img
-                    key={key}
-                    src={image.path}
-                    alt={`Decorative ${key}`}
-                    className="absolute object-contain"
-                    style={{
-                      width: image.width,
-                      height: image.height,
-                      top: image.top,
-                      left: image.left,
-                      right: image.right,
-                      bottom: image.bottom,
-                      zIndex: image.zIndex,
-                      transform: image.rotate ? `rotate(${image.rotate}deg)` : undefined
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
+                      </div>
+                    )}
+                  </div>
+                  {/* Div 5 - Counter - 30vh */}
+                  <div className="w-full h-[20vh] md:h-[30vh] flex flex-col items-center justify-center gap-2 md:gap-4">
+                    <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
+                      {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
+                    </div>
 
-            {/* Div 5 - Counter - 30vh */}
-            <div className="w-full h-[30vh]  flex flex-col items-center justify-center gap-4">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-[Fredoka] font-normal text-black">
-                {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
-              </div>
+                  </div>
+                </>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </Carousel>
     </div>
   );
