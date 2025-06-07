@@ -8,7 +8,7 @@ const Page1 = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <OptimizedImage
-              src="/assets/logo.png"
+              src="/assets/logo.webp"
               alt="logo"
               width={120}
               height={120}

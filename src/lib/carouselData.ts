@@ -5,7 +5,7 @@ export const productCategories = [
     items: [
       {
         title: "Probiotic lassi",
-        image: "/assets/ProductImages/Lassi 200g.png",
+        image: "/assets/ProductImages/Lassi rose.webp",
         subtext1: "Our lassi brings together smooth cultured curd and delightful flavours to create a refreshing, creamy drink. Whether plain or fruity, each cup offers a gentle boost of probiotics and a satisfying sip rooted in traditional Indian goodness.",
         subtext2: "A smooth and refreshing probiotic drink that's gentle on your stomach and perfect for daily use, any time of the day.",
         subtext3: "Classic taste with probiotic comfort. ",
@@ -43,7 +43,7 @@ export const productCategories = [
       },
       {
         title: "Lassi Strawberry 200g",
-        image: "/assets/ProductImages/Lassi Strawberry 200g.png",
+        image: "/assets/ProductImages/Lassi Strawberry.webp",
         subtext1: "Our lassi brings together smooth cultured curd and delightful flavours to create a refreshing, creamy drink. Whether plain or fruity, each cup offers a gentle boost of probiotics and a satisfying sip rooted in traditional Indian goodness.",
         subtext2: "Real strawberry pulp and probiotic curd come together for a fruity, creamy treat that's easy on the gut.",
         subtext3: "A healthy dessert alternative, naturally sweet.",
@@ -73,7 +73,7 @@ export const productCategories = [
       },
       {
         title: "Lassi Blueberry 200g",
-        image: "/assets/ProductImages/Lassi Blueberry 200g.png",
+        image: "/assets/ProductImages/Lassi Blueberry.webp",
         subtext1: "Our lassi brings together smooth cultured curd and delightful flavours to create a refreshing, creamy drink. Whether plain or fruity, each cup offers a gentle boost of probiotics and a satisfying sip rooted in traditional Indian goodness.",
         subtext2: "Blueberry blended into cultured dairy for a tangy, refreshing lassi that energises and supports digestion.",
         subtext3: "Perfect pick-me-up with antioxidants.",
@@ -104,7 +104,7 @@ export const productCategories = [
       },
       {
         title: "Lassi Mango 200g",
-        image: "/assets/ProductImages/Lassi Mango 200g.png",
+        image: "/assets/ProductImages/Lassi Mango.webp",
         subtext1: "Our lassi brings together smooth cultured curd and delightful flavours to create a refreshing, creamy drink. Whether plain or fruity, each cup offers a gentle boost of probiotics and a satisfying sip rooted in traditional Indian goodness.",
         subtext2: "Sweet Alphonso mango blended with probiotic lassi to give you a tropical, creamy drink that’s full of flavour and gut goodness.",
         subtext3: "Tropical mango, creamy and nourishing.",
