@@ -2,7 +2,7 @@ import OptimizedImage from './OptimizedImage';
 
 const Page1 = () => {
   return (
-    <div className="relative h-[130vh] w-full bg-[url('/assets/bg1.png')] bg-cover bg-center bg-no-repeat bg-[#d2eef9]">
+    <div className="relative h-[130vh] w-full bg-[url('/assets/bg1.webp')] bg-cover bg-center bg-no-repeat bg-[#d2eef9]">
       <header className=" w-screen z-50 bg-transparent px-4 sm:px-6 md:px-10">
         <div className="max-w-full mx-auto w-full flex items-center justify-between">
           {/* Logo */}
