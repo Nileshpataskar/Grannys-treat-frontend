@@ -119,8 +119,12 @@ const Page3 = () => {
                       style={{
                         marginTop: imgStyle?.top || 0,
                         marginBottom: imgStyle?.marginBottom || 0,
-                        maxWidth: imgStyle?.width ? imgStyle.width : '60vw',
-                        maxHeight: imgStyle?.height ? imgStyle.height : '22vh',
+                        maxWidth: ['xs', 'sm', 'md'].includes(breakpoint)
+                          ? (imgStyle?.width ? imgStyle.width : '80vw')
+                          : (imgStyle?.width ? imgStyle.width : '32vw'),
+                        maxHeight: ['xs', 'sm', 'md'].includes(breakpoint)
+                          ? (imgStyle?.height ? imgStyle.height : '32vh')
+                          : (imgStyle?.height ? imgStyle.height : '60vh'),
                         objectFit: 'contain',
                         display: 'inline-block',
                       }}
@@ -174,21 +178,31 @@ const Page3 = () => {
                     </div>
                     {/* Div 3 - Main Product Image */}
                     <div className="w-full flex-col md:w-3/8 h-full flex items-center justify-around ">
-                      <OptimizedImage
-                        src={item.image}
-                        alt={item.title}
-                        width={imgStyle?.width || 350}
-                        height={imgStyle?.height || 300}
-                        style={{
-                          marginTop: imgStyle?.top || 0,
-                          marginBottom: imgStyle?.marginBottom || 0,
-                          maxWidth: imgStyle?.width ? imgStyle.width : '28vw',
-                          maxHeight: imgStyle?.height ? imgStyle.height : '60vh',
-                          objectFit: 'contain',
-                          display: 'inline-block',
-                        }}
-                        className="drop-shadow-lg rounded-xl"
-                      />
+                      <span className=" w-fit h-[70%]">
+                        <OptimizedImage
+                          src={item.image}
+                          alt={item.title}
+                          width={imgStyle?.width || 350}
+                          height={imgStyle?.height || 300}
+                          style={{
+                            marginTop: imgStyle?.top || 0,
+                            marginBottom: imgStyle?.marginBottom || 0,
+                            maxWidth: ['xs', 'sm', 'md'].includes(breakpoint)
+                              ? (imgStyle?.width ? imgStyle.width : '80vw')
+                              : (imgStyle?.width ? imgStyle.width : '32vw'),
+                            maxHeight: ['xs', 'sm', 'md'].includes(breakpoint)
+                              ? (imgStyle?.height ? imgStyle.height : '32vh')
+                              : (imgStyle?.height ? imgStyle.height : '60vh'),
+                            objectFit: 'contain',
+                            display: 'inline-block',
+                          }}
+                          className="drop-shadow-lg rounded-xl"
+                        />
+                      </span>
+                      <span className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
+                        {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
+
+                      </span>
                     </div>
                     {/* Div 4 - Right Space with Features */}
                     {['md', 'lg', 'xl'].includes(breakpoint) && (
@@ -261,9 +275,9 @@ const Page3 = () => {
                   </div>
                   {/* Div 5 - Counter - 30vh */}
                   <div className="w-full h-[20vh] md:h-[30vh] flex flex-col items-center justify-center gap-2 md:gap-4">
-                    <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
+                    {/* <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
                       {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
-                    </div>
+                    </div> */}
 
                   </div>
                 </>

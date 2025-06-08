@@ -249,13 +249,12 @@ export const productCategories = [
         subtext3: "Refreshing, gentle, gut-friendly drink",
         colorbg: "#f3cb8e",
         imgStyle: {
-          width: 500, height: 260, top: -120, marginBottom: 0,
+          width: 500, height: 260, top: -170, marginBottom: 0,
           responsive: {
-            xs: { width: 500, height: 260, top: -120, marginBottom: 0 },
-            sm: { width: 500, height: 260, top: -120, marginBottom: 0 },
-            md: { width: 500, height: 260, top: -120, marginBottom: 0 },
-            lg: { width: 500, height: 260, top: -120, marginBottom: 0 },
-            xl: { width: 500, height: 260, top: -120, marginBottom: 0 }
+            xs: { width: 500, height: 260, top: -170, marginBottom: 0 },
+            sm: { width: 500, height: 260, top: -170, marginBottom: 0 },
+            md: { width: 500, height: 260, top: 20, marginBottom: 0 },
+            lg: { width: 500, height: 260, top: 20, marginBottom: 0 },
           }
         },
         thumbnailStyle: {
@@ -695,13 +694,13 @@ export const productCategories = [
         subtext3: "Fresh and protein-rich",
         colorbg: "#9ed1a6",
         imgStyle: {
-          width: 250, height: 120, top: -250, marginBottom: 0,
+          width: 250, height: 120, top: 0, marginBottom: 0,
           responsive: {
             xs: { width: 250, height: 120, top: 0, marginBottom: 0 },
             sm: { width: 250, height: 120, top: 0, marginBottom: 0 },
             md: { width: 250, height: 120, top: 0, marginBottom: 0 },
-            lg: { width: 250, height: 120, top: 0, marginBottom: 0 },
-            xl: { width: 250, height: 120, top: 0, marginBottom: 0 }
+            lg: { width: 250, height: 120, top: -150, marginBottom: 0 },
+            xl: { width: 250, height: 120, top: -150, marginBottom: 0 }
           }
         },
         thumbnailStyle: {
@@ -771,11 +770,11 @@ export const productCategories = [
         imgStyle: {
           width: 250, height: 150, top: -200, marginBottom: 0,
           responsive: {
-            xs: { width: 250, height: 150, top: -200, marginBottom: 0 },
-            sm: { width: 250, height: 150, top: -200, marginBottom: 0 },
-            md: { width: 250, height: 150, top: -200, marginBottom: 0 },
-            lg: { width: 250, height: 150, top: -200, marginBottom: 0 },
-            xl: { width: 250, height: 150, top: -200, marginBottom: 0 }
+            xs: { width: 250, height: 150, top: -60, marginBottom: 0 },
+            sm: { width: 250, height: 150, top: -60, marginBottom: 0 },
+            md: { width: 250, height: 150, top: -60, marginBottom: 0 },
+            lg: { width: 250, height: 150, top: -60, marginBottom: 0 },
+            xl: { width: 250, height: 150, top: -60, marginBottom: 0 }
           }
         },
         thumbnailStyle: {
@@ -851,11 +850,11 @@ export const productCategories = [
         imgStyle: {
           width: 500, height: 220, top: -100, marginBottom: 0,
           responsive: {
-            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+            xs: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            md: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: 0, marginBottom: 0 }
           }
         },
         thumbnailStyle: {
@@ -905,11 +904,11 @@ export const productCategories = [
         imgStyle: {
           width: 500, height: 220, top: -100, marginBottom: 0,
           responsive: {
-            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+            xs: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            md: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: 0, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: 0, marginBottom: 0 }
           }
         },
         thumbnailStyle: {
@@ -965,11 +964,11 @@ export const productCategories = [
         imgStyle: {
           width: 500, height: 220, top: -100, marginBottom: 0,
           responsive: {
-            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+            xs: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            md: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: -50, marginBottom: 0 }
           }
         },
         thumbnailStyle: {
@@ -1038,11 +1037,11 @@ export const productCategories = [
         imgStyle: {
           width: 500, height: 220, top: -100, marginBottom: 0,
           responsive: {
-            xs: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            sm: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            md: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            lg: { width: 500, height: 220, top: -100, marginBottom: 0 },
-            xl: { width: 500, height: 220, top: -100, marginBottom: 0 }
+            xs: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            sm: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            md: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            lg: { width: 500, height: 220, top: -50, marginBottom: 0 },
+            xl: { width: 500, height: 220, top: -50, marginBottom: 0 }
           }
         },
         thumbnailStyle: {
