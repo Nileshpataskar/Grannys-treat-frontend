@@ -11,6 +11,13 @@ const Page2 = () => {
         </h1>
 
         {/* Bottom heading */}
+        <h4
+          className="font-[Fredoka] text-[#285192] font-extrabold text-center 
+          tracking-wide mt-16 sm:mt-20 md:mt-44
+          text-3xl sm:text-5xl "
+        >
+          Explore our range of dairy delights
+        </h4>
       
       </div>
 

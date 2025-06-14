@@ -6,28 +6,28 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Your Name"
-            className="w-full p-5  border-4 border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee] cursor-text"
+            className="w-full p-5  border-[6px] border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee] cursor-text"
           />
         </div>
         <div className="mb-4">
           <input
             type="email"
             placeholder="Email Address"
-            className="w-full p-5  border-4 border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee]"
+            className="w-full p-5  border-[6px] border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee]"
           />
         </div>
         <div className="mb-4">
           <input
             type="text"
             placeholder="Topic"
-            className="w-full p-5  border-4 border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee]"
+            className="w-full p-5  border-[6px] border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee]"
           />
         </div>
         <div className="mb-4">
           <textarea
             placeholder="Your Message...."
-            rows={4}
-            className="w-full p-5  border-4 border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee]"
+            rows={7}
+            className="w-full p-5  border-[6px] border-[#55acee] rounded-xl placeholder:text-[#fff] placeholder:text-xl placeholder:font-bold focus:outline-none focus:ring-1 focus:ring-[#55acee]"
           />
         </div>
         <button type="submit" className=" w-full justify-center flex cursor-pointer ">

@@ -17,7 +17,6 @@ export const productCategories = [
             sm: { width: 450, height: 400, top: -100, marginBottom: 0 },
             md: { width: 450, height: 400, top: -100, marginBottom: 0 },
             lg: { width: 450, height: 400, top: -100, marginBottom: 0 },
-            xl: { width: 450, height: 400, top: -100, marginBottom: 0 }
           }
         },
         thumbnailStyle: {

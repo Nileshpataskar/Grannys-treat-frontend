@@ -40,6 +40,7 @@ function useBreakpoint() {
 const Page3 = () => {
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const category = productCategories[categoryIndex];
   const thumbnails = category.items.map((item) => item.image);
   const currentItem = category.items[currentImageIndex];
@@ -48,21 +49,40 @@ const Page3 = () => {
   const breakpoint = useBreakpoint();
 
   const prevCategory = () => {
+    setIsTransitioning(true);
     setCategoryIndex((i) => (i === 0 ? productCategories.length - 1 : i - 1));
     setCurrentImageIndex(0);
+    // Reset transition state after animation completes
+    setTimeout(() => setIsTransitioning(false), 500);
   };
 
   const nextCategory = () => {
+    setIsTransitioning(true);
     setCategoryIndex((i) => (i === productCategories.length - 1 ? 0 : i + 1));
     setCurrentImageIndex(0);
+    // Reset transition state after animation completes
+    setTimeout(() => setIsTransitioning(false), 500);
   };
 
   const handleImageChange = (index) => {
     setCurrentImageIndex(index);
   };
 
+  // Get consistent dimensions for the current breakpoint
+  const getConsistentDimensions = (item) => {
+    const imgStyle = item.imgStyle?.responsive?.[breakpoint] || item.imgStyle;
+    const isMobile = ['xs', 'sm', 'md'].includes(breakpoint);
+    
+    return {
+      width: isMobile ? (imgStyle?.width || 220) : (imgStyle?.width || 350),
+      height: isMobile ? (imgStyle?.height || 180) : (imgStyle?.height || 300),
+      maxWidth: isMobile ? '80vw' : '32vw',
+      maxHeight: isMobile ? '32vh' : '60vh',
+    };
+  };
+
   return (
-    <div className="w-full h-[100vh] flex flex-col bg-gray-100 relative z-10">
+    <div className="w-full h-[100vh] flex flex-col bg-gray-100 relative z-10 -mt-[50px]">
       {/* Navigation Controls Overlay */}
       <div className="absolute inset-0 flex items-center justify-between px-8 pointer-events-none z-20">
         <button
@@ -93,7 +113,7 @@ const Page3 = () => {
         items={category.items}
       >
         {category.items.map((item, idx) => {
-          const imgStyle = item.imgStyle?.responsive?.[breakpoint] || item.imgStyle;
+          const dimensions = getConsistentDimensions(item);
           return (
             <div
               key={idx}
@@ -104,32 +124,41 @@ const Page3 = () => {
               {['xs', 'sm', 'md'].includes(breakpoint) ? (
                 <div className="flex flex-col gap-y-5">
                   {/* Div 1 - Product Title */}
-                  <div className="w-full flex items-center justify-center mt-8 mb-4">
+                  <div className="w-full flex items-center justify-center mt-4 mb-4">
                     <h1 className="text-3xl sm:text-4xl font-[Fredoka] font-bold text-white drop-shadow-md text-center">
                       {item.title}
                     </h1>
                   </div>
                   {/* Div 3 - Main Product Image */}
                   <div className="w-full flex items-center justify-center mb-8">
-                    <OptimizedImage
-                      src={item.image}
-                      alt={item.title}
-                      width={imgStyle?.width || 220}
-                      height={imgStyle?.height || 180}
+                    <div 
+                      className="relative transition-all duration-500"
                       style={{
-                        marginTop: imgStyle?.top || 0,
-                        marginBottom: imgStyle?.marginBottom || 0,
-                        maxWidth: ['xs', 'sm', 'md'].includes(breakpoint)
-                          ? (imgStyle?.width ? imgStyle.width : '80vw')
-                          : (imgStyle?.width ? imgStyle.width : '32vw'),
-                        maxHeight: ['xs', 'sm', 'md'].includes(breakpoint)
-                          ? (imgStyle?.height ? imgStyle.height : '32vh')
-                          : (imgStyle?.height ? imgStyle.height : '60vh'),
-                        objectFit: 'contain',
-                        display: 'inline-block',
+                        width: dimensions.width,
+                        height: dimensions.height,
+                        maxWidth: dimensions.maxWidth,
+                        maxHeight: dimensions.maxHeight,
                       }}
-                      className="transition-all duration-500 drop-shadow-lg rounded-xl"
-                    />
+                    >
+                      <OptimizedImage
+                        src={item.image}
+                        alt={item.title}
+                        width={dimensions.width}
+                        height={dimensions.height}
+                        style={{
+                          objectFit: 'contain',
+                          display: 'inline-block',
+                          opacity: isTransitioning ? 0 : 1,
+                          transition: 'opacity 0.3s ease-in-out',
+                        }}
+                        className="drop-shadow-lg rounded-xl"
+                      />
+                      {isTransitioning && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100/50">
+                          <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   {/* Div 2 - Description */}
                   <div className="w-full flex flex-col items-center justify-center px-4 py-2">
@@ -154,13 +183,13 @@ const Page3 = () => {
               ) : (
                 <>
                   {/* Div 1 - Product Title - 20vh */}
-                  <div className="w-full h-[40vh] flex items-center justify-center">
+                  <div className="w-full h-[35vh] flex items-center justify-center">
                     <h1 className="text-2xl sm:text-3xl lg:text-6xl font-[Fredoka] transition-all duration-500">
                       {item.title}
                     </h1>
                   </div>
                   {/* Main Content Area - 50vh */}
-                  <div className="w-full h-[60vh] flex flex-col md:flex-row items-center md:items-stretch">
+                  <div className="w-full h-[65vh] flex flex-col md:flex-row items-center md:items-stretch">
                     {/* Div 2 - Left Space with Description */}
                     <div className="w-full md:w-3/8 h-auto md:h-full flex flex-col items-start justify-center relative px-4 py-4 md:py-0">
                       <div className="max-w-full md:max-w-[500px] mx-auto md:ml-32 md:mr-6">
@@ -179,28 +208,37 @@ const Page3 = () => {
                     {/* Div 3 - Main Product Image */}
                     <div className="w-full flex-col md:w-3/8 h-full flex items-center justify-around ">
                       <span className=" w-fit h-[70%]">
-                        <OptimizedImage
-                          src={item.image}
-                          alt={item.title}
-                          width={imgStyle?.width || 350}
-                          height={imgStyle?.height || 300}
+                        <div 
+                          className="relative transition-all duration-500"
                           style={{
-                            marginTop: imgStyle?.top || 0,
-                            marginBottom: imgStyle?.marginBottom || 0,
-                            maxWidth: ['xs', 'sm', 'md'].includes(breakpoint)
-                              ? (imgStyle?.width ? imgStyle.width : '80vw')
-                              : (imgStyle?.width ? imgStyle.width : '32vw'),
-                            maxHeight: ['xs', 'sm', 'md'].includes(breakpoint)
-                              ? (imgStyle?.height ? imgStyle.height : '32vh')
-                              : (imgStyle?.height ? imgStyle.height : '60vh'),
-                            objectFit: 'contain',
-                            display: 'inline-block',
+                            width: dimensions.width,
+                            height: dimensions.height,
+                            maxWidth: dimensions.maxWidth,
+                            maxHeight: dimensions.maxHeight,
                           }}
-                          className="drop-shadow-lg rounded-xl"
-                        />
+                        >
+                          <OptimizedImage
+                            src={item.image}
+                            alt={item.title}
+                            width={dimensions.width}
+                            height={dimensions.height}
+                            style={{
+                              objectFit: 'contain',
+                              display: 'inline-block',
+                              opacity: isTransitioning ? 0 : 1,
+                              transition: 'opacity 0.3s ease-in-out',
+                            }}
+                            className="drop-shadow-lg rounded-xl"
+                          />
+                          {isTransitioning && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-gray-100/50">
+                              <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                          )}
+                        </div>
                       </span>
                       <span className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
-                        {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
+                        {/* {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')} */}
 
                       </span>
                     </div>
@@ -274,10 +312,10 @@ const Page3 = () => {
                     )}
                   </div>
                   {/* Div 5 - Counter - 30vh */}
-                  <div className="w-full h-[20vh] md:h-[30vh] flex flex-col items-center justify-center gap-2 md:gap-4">
-                    {/* <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
+                  <div className="w-full h-[20vh] md:h-[50vh] flex flex-col items-center justify-center gap-2 md:gap-4">
+                    <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-[Fredoka] font-normal text-black">
                       {String(currentImageIndex + 1).padStart(2, '0')}/{String(category.items.length).padStart(2, '0')}
-                    </div> */}
+                    </div>
 
                   </div>
                 </>

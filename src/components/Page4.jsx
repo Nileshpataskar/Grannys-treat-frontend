@@ -19,7 +19,7 @@ const Page4 = () => {
   }, [images.length]);
 
   return (
-    <div className="w-full bg-[#d2eef9] py-16 px-4 sm:px-6 md:px-20 relative">
+    <div className="w-full bg-[#d1ebfd] py-16 px-4 sm:px-6 md:px-20 relative">
       <div className="w-full flex flex-col items-center">
         {/* Heading */}
         <h3
@@ -52,11 +52,11 @@ const Page4 = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex flex-col items-start gap-6">
+          <div className="w-full md:w-1/2 md:px-20 flex flex-col items-start gap-6">
             <img
               src="/assets/photo2.png"
               alt="Healthy Dairy"
-              className="w-full max-w-[400px] md:max-w-[500px] md:h-[300px] h-auto"
+              className="w-full  md:h-[300px] h-auto"
             />
 
             <p className="font-[Fredoka] text-[#285192] font-normal text-[clamp(1.5rem,2.5vw,1.8rem)]">
