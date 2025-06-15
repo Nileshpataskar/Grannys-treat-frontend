@@ -30,7 +30,7 @@ const Page8 = () => {
   }, []);
   return (
     <div className="min-h-screen w-full bg-[#d2eef9] relative">
-      <div className="w-full max-w-7xl mx-auto p-8">
+      <div className=" w-[85%] mx-auto p-8">
         <h3 className="font-[Fredoka] text-[#285192] font-extrabold text-center text-3xl md:text-5xl mb-12 tracking-wider">
           Be a part of our Instagram community
         </h3>
@@ -48,7 +48,7 @@ const Page8 = () => {
           </div>
 
           {/* Column 2: Grid layout */}
-          <div className="lg:w-[1200px]">
+          <div className="lg:w-[80%]">
             {/* Row 1: Two larger images */}
             <div className="flex gap-4 mb-4 h-[250px]">
               {thumbnails[1] && (
@@ -74,7 +74,7 @@ const Page8 = () => {
                   key={thumbnails[3].id}
                   src={thumbnails[3].thumbnail_url || thumbnails[3].media_url}
                   alt={thumbnails[3].caption}
-                  className="w-[60%] object-cover border-8 border-white rounded-3xl shadow-lg"
+                  className="w-[30%] object-cover border-8 border-white rounded-3xl shadow-lg"
                 />
               )}
               {thumbnails[4] && (
@@ -83,6 +83,14 @@ const Page8 = () => {
                   src={thumbnails[4].thumbnail_url || thumbnails[4].media_url}
                   alt={thumbnails[4].caption}
                   className="w-[40%] object-cover border-8 border-white rounded-3xl shadow-lg"
+                />
+              )}
+              {thumbnails[5] && (
+                <img
+                  key={thumbnails[5].id}
+                  src={thumbnails[5].thumbnail_url || thumbnails[5].media_url}
+                  alt={thumbnails[5].caption}
+                  className="w-[30%] object-cover border-8 border-white rounded-3xl shadow-lg"
                 />
               )}
             </div>
