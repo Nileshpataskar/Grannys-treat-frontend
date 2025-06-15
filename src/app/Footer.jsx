@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
 
         <div className="w-full md:w-1/3 sm:text-center md:text-start space-y-4">
-          <p className="text-base font-medium sm:text-lg font-[Fredoka] text-[#285192]">
+          <p className="text-base font-medium sm:text-xl font-[Fredoka] text-[#285192]">
             Plot No: 403, Phase - 2, Industrial Area, Scheme No:78, Part - 1, MR
             11, Dewas Naka, Niranjanpur, Indore, Madhya Pradesh 452010
           </p>
@@ -43,9 +43,9 @@ const Footer = () => {
               alt="Phone"
               className="w-5 h-5 sm:w-6 sm:h-6"
             />
-            <span className=" text-[#285192] rounded-full px-3 py-1 text-sm sm:text-base font-medium">
+            <h1 className=" text-[#285192]  px-3 py-1 text-lg sm:text-base font-semibold">
               +91 7024221305
-            </span>
+            </h1>
           </p>
 
           <p className="flex sm:justify-center md:justify-start items-center gap-2">
@@ -54,9 +54,9 @@ const Footer = () => {
               alt="Email"
               className="w-5 h-5 sm:w-6 sm:h-6"
             />
-            <span className=" text-[#285192] rounded-full px-3 py-1 text-sm sm:text-base font-medium">
+            <h1 className=" text-[#285192]  px-3 py-1 text-lg sm:text-base font-semibold">
               info@grannystreat.in
-            </span>
+            </h1>
           </p>
         </div>
 

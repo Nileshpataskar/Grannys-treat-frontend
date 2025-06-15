@@ -1,6 +1,11 @@
 import OptimizedImage from './OptimizedImage';
+import { smoothScrollTo } from '../lib/scrollUtils';
 
 const Page1 = () => {
+  const scrollToContact = () => {
+    smoothScrollTo('contact-form', 80); // 80px offset for header height
+  };
+
   return (
     <div className="relative h-[140vh] w-full bg-[url('/assets/bg1.webp')] bg-cover bg-center bg-no-repeat bg-[#d2eef9]">
      
@@ -46,13 +51,18 @@ const Page1 = () => {
         <h3 className="font-[Fredoka] text-[#285192] font-semibold text-center  text-[clamp(1rem,2vw,2rem)] leading-snug max-w-[90%] sm:max-w-[80%] md:max-w-[70%] xl:max-w-[60%]">
           Quality That Brings Homemade Goodness to Your Table
         </h3>
-        <OptimizedImage
-          src="/assets/BG/button.svg"
-          alt="bg1"
-          width={240}
-          height={80}
-          className="w-[clamp(10rem,20vw,15rem)] h-auto mt-4"
-        />
+        <button 
+          onClick={scrollToContact}
+          className="cursor-pointer hover:scale-105 transition-transform duration-300"
+        >
+          <OptimizedImage
+            src="/assets/BG/button.svg"
+            alt="Let's Talk button"
+            width={240}
+            height={80}
+            className="w-[clamp(10rem,20vw,15rem)] h-auto mt-4"
+          />
+        </button>
       </div>
       </div>
       {/* Background image with responsive handling */}

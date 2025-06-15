@@ -17,20 +17,32 @@ const Page6 = () => {
         <VideoSlider />
       </div>
 
-      {/* <img
-        src="/assets/BG/strawberry_page6.svg"
-        alt="straw"
-        className="absolute w-[150px] z-0 h-[150px] top-[10%] left-[70%] -rotate-[26deg] opacity-80 md:w-[205px] md:h-[208px] md:top-[18  0px] md:left-[900px]"
-      /> */}
       <img
-        src="/assets/BG/leaf.svg"
-        alt="straw"
-        className="absolute w-[150px] h-[150px] top-[20%] left-[10%] -rotate-[26deg] md:w-[205px] md:h-[208px] md:top-[300px] md:left-[100px]"
+        src="/assets/p3/strawberry.png"
+        alt="Decorative strawberry illustration"
+        className="absolute w-[clamp(80px,15vw,205px)] h-auto aspect-square
+        top-[8%] sm:top-[12%] md:top-[15%]  
+        left-[2%] sm:left-[6%] md:left-[35%] lg:left-[52%]
+         opacity-25 pointer-events-none select-none z-0 rotate-40"
       />
+
       <img
-        src="/assets/BG/leaf.svg"
-        alt="straw"
-        className="absolute w-[150px] h-[150px] top-[20%] right-[10%] -rotate-[26deg] md:w-[205px] md:h-[208px] md:top-[300px] md:right-[100px]"
+        src="/assets/p3/leaf-3.png"
+        alt="Decorative strawberry illustration"
+        className="absolute w-[clamp(60px,25vw,350px)] h-auto aspect-square
+      top-[8%] sm:top-[12%] md:top-[27%]  
+      right-[2%] sm:right-[6%] md:right-[10%] lg:right-[0]
+       opacity-30 pointer-events-none select-none z-0"
+      />
+
+      <img
+        src="/assets/p3/leaf-3.png"
+        alt="Decorative strawberry illustration"
+        className="absolute w-[clamp(80px,25vw,250px)] h-auto aspect-square
+      top-[8%] sm:top-[12%] md:top-[20%]  
+      left-[2%] sm:left-[6%] md:left-[10%] lg:left-[4%]
+       opacity-30 pointer-events-none select-none z-0 rotate-30"
+       
       />
     </div>
   );

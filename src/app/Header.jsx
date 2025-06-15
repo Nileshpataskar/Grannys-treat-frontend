@@ -1,15 +1,12 @@
 "use client";
-import { useRef } from 'react';
+import { smoothScrollTo } from "../lib/scrollUtils";
 
 const Header = () => {
   const navbarData = ["Products", "Our Story", "Benefits", "Testimonials"];
 
-  const scrollToSection = (sectionName) => {
-    const sectionId = sectionName.toLowerCase().replace(/\s+/g, '-');
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleNavigation = (item) => {
+    const sectionId = item.toLowerCase().replace(/\s+/g, '-');
+    smoothScrollTo(sectionId, 80); // 80px offset for header height
   };
 
   return (
@@ -33,7 +30,7 @@ const Header = () => {
               {navbarData.map((item, index) => (
                 <button
                   key={index}
-                  onClick={() => scrollToSection(item)}
+                  onClick={() => handleNavigation(item)}
                   className="text-white text-[clamp(0.9rem,1.5vw,1.4rem)] px-5 py-1 hover:underline transition cursor-pointer"
                 >
                   {item}
