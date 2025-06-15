@@ -2,7 +2,7 @@ import VideoSlider from "../app/Videos/VideoSlider";
 
 const Page6 = () => {
   return (
-    <div className="h-[140vh] w-full  bg-[#d2eef9] relative">
+    <div className="h-[140vh] w-full  bg-[#d0ebff] relative">
       <div className="w-full flex mb-32 gap-10 z-20 justify-center items-center flex-col ">
         <img
           src="/assets/BG/Vector.png"

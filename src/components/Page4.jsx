@@ -36,7 +36,7 @@ const Page4 = () => {
             <img
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
-              className=" md:h-[580px] h-auto object-cover transition-opacity duration-700 rounded-2xl"
+              className=" md:h-[630px] h-auto object-cover transition-opacity duration-700 rounded-2xl"
             />
             <div className="flex space-x-2 mt-4 w-full justify-center ">
               {images.map((_, idx) => (

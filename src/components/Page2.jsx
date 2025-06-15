@@ -18,7 +18,7 @@ const Page2 = () => {
         >
           Explore our range of dairy delights
         </h4>
-      
+
       </div>
 
       {/* Decorative Images */}
@@ -26,16 +26,16 @@ const Page2 = () => {
         src="/assets/BG/strawberry_page2.svg"
         alt="Decorative strawberry illustration"
         className="absolute w-[clamp(80px,22vw,285px)] h-auto aspect-square
-        top-[8%] sm:top-[12%] md:top-[18%] lg:top-[22%] xl:top-[135px]
+        top-[8%] sm:top-[12%] md:top-[18%] lg:top-[22%] xl:top-[50px]
         left-[2%] sm:left-[6%] md:left-[10%] lg:left-[12%] xl:left-[186.63px]
-        -rotate-[26deg] opacity-50 pointer-events-none select-none z-0"
+         opacity-50 pointer-events-none select-none z-0"
       />
 
       <img
         src="/assets/BG/blueberry_page2.svg"
         alt="Decorative blueberry illustration"
         className="absolute w-[clamp(100px,28vw,375px)] h-auto aspect-square
-        top-[55%] sm:top-[48%] md:top-[42%] lg:top-[36%] xl:top-[320px]
+        top-[55%] sm:top-[48%] md:top-[42%] lg:top-[36%] xl:top-[220px]
         right-[2%] sm:right-[6%] md:right-[10%] lg:right-[12%] xl:right-[186.63px]
         -rotate-[26deg] pointer-events-none select-none hidden sm:block z-0"
       />

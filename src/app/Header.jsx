@@ -1,13 +1,22 @@
 "use client";
+import { useRef } from 'react';
 
 const Header = () => {
-  const navbarData = ["Products", "Ourstory", "Benefits", "Testimonials"];
+  const navbarData = ["Products", "Our Story", "Benefits", "Testimonials"];
+
+  const scrollToSection = (sectionName) => {
+    const sectionId = sectionName.toLowerCase().replace(/\s+/g, '-');
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
       {/* Spacer to prevent overlap from fixed header */}
 
-      <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 md:px-10 ">
+      <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 md:px-10  font-[Fredoka] text-[#d2eef9]">
         <div className="max-w-full mx-auto w-full flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -20,15 +29,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-1 justify-center mt-5">
-            <div className="flex gap-[clamp(4rem,2vw,5rem)] px-20 py-2 bg-[#285192] rounded-full">
+            <div className="flex gap-[clamp(4rem,2vw,5rem)] px-20 py-2 bg-[#285192] rounded-full ">
               {navbarData.map((item, index) => (
-                <a
+                <button
                   key={index}
-                  href="#"
-                  className="text-white text-[clamp(0.9rem,1.5vw,1.4rem)] px-3 hover:underline transition"
+                  onClick={() => scrollToSection(item)}
+                  className="text-white text-[clamp(0.9rem,1.5vw,1.4rem)] px-5 py-1 hover:underline transition cursor-pointer"
                 >
                   {item}
-                </a>
+                </button>
               ))}
             </div>
           </nav>
